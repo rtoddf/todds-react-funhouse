@@ -7,6 +7,10 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
+    toolBarMargin: {
+        // spread operator
+        ...theme.mixins.toolbar
+    },
     menuButton: {
         marginRight: theme.spacing(2),
     },
@@ -46,6 +50,9 @@ const Header = props => {
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
+            <>
+                <div className={ classes.toolBarMargin } />
+            </>
         </div>
       );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
 
-import image from "../static/images/cards/comics-kevin-keller.jpg";
+import image from "../../static/images/cards/comics-kevin-keller.jpg";
 
 const styles = {
     root: {
@@ -28,7 +28,7 @@ class CardClass extends React.Component {
             title="Contemplative Reptile"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
+            <Typography gutterBottom variant="h3" color="primary">
               Kevin Keller
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
