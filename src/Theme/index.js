@@ -13,7 +13,7 @@ const theme = createMuiTheme({
         secondary: {
             main: "#F2E205",
         },
-        teriary: {
+        tertiary: {
             main: "#F2B705"
         },
         quaternary: {
