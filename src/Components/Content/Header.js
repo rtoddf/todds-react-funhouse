@@ -38,7 +38,7 @@ const Header = props => {
     return (
         <div className={classes.root}>
             <ElevationScroll>
-                <AppBar position="fixed">
+                <AppBar position="fixed" color="primary">
                     <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                         {/* <MenuIcon /> */}
