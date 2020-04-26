@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import CardFunctional from "../Cards/CardFunctional";
 import CardClass from "../Cards/CardClass";
 
-const Well = props => {
+const Cards = props => {
     return (
         <>
             <Grid container spacing={2}>
@@ -18,4 +18,4 @@ const Well = props => {
     )
 }
 
-export default Well;
+export default Cards;
