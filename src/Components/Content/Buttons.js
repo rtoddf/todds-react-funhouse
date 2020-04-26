@@ -7,6 +7,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+    },
+    gridItemCenter: {
+        textAlign: "center"
     }
 }));
 
@@ -15,10 +18,10 @@ const Buttons = props => {
     return (
         <div className={classes.root}>
             <Grid container justify="center" spacing={2}>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} className={classes.gridItemCenter}>
                     <ButtonFcuntional />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} md={6} className={classes.gridItemCenter}>
                     <ButtonClass />
                 </Grid>
             </Grid>
