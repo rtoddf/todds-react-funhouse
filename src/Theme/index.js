@@ -62,8 +62,23 @@ export function createTheme(colors) {
             secondary: {
                 main: colors.secondary[500].hex
             },
+            tertiary: {
+                main: "#F2B705"
+            },
+            quaternary: {
+                main: "#F2A20C"
+            },
+            quinary: {
+                main: "#D96523"
+            }
+        },
+        typography: {
+            h3: {
+                fontSize: "6rem",
+            }
         },
     });
+    console.log("theme: ", theme);
 
     return theme;
 }
