@@ -11,6 +11,9 @@ class App extends React.Component {
     let colors = {
       primary: "#242326",
       secondary: "#F2E205",
+      tertiary: "#F2B705",
+      quaternary: "#F2B705",
+      quinary: "#D96523"
     }
 
     return setThemeColors(colors);
