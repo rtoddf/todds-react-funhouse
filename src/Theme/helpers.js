@@ -1,5 +1,37 @@
 import tinycolor from 'tinycolor2';
 
+export function setThemeColors(colors) {
+    let palette = { primary: {}, secondary: {}, tertiary: {}, quaternary: {}, quinary: {} }
+
+    const primaryPalette = computeColors(colors.primary),
+        secondaryPalette = computeColors(colors.secondary),
+        teriaryPalette = computeColors(colors.secondary),
+        quaternaryPalette = computeColors(colors.secondary),
+        quinaryPalette = computeColors(colors.secondary);
+
+    palette.primary = Object.assign({}, ...primaryPalette.map((color) => {
+        return { [color.name]: color };
+    }));
+
+    palette.secondary = Object.assign({}, ...secondaryPalette.map((color) => {
+        return { [color.name]: color };
+    }));
+
+    palette.tertiary = Object.assign({}, ...teriaryPalette.map((color) => {
+        return { [color.name]: color };
+    }));
+
+    palette.quaternary = Object.assign({}, ...quaternaryPalette.map((color) => {
+        return { [color.name]: color };
+    }));
+
+    palette.quinary = Object.assign({}, ...quinaryPalette.map((color) => {
+        return { [color.name]: color };
+    }));
+
+    return palette;
+}
+
 function getColorObject(value, name) {
     var c = tinycolor(value);
 

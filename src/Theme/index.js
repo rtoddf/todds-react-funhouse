@@ -1,40 +1,8 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import { computeColors } from './helpers';
-
-let palette = { primary: {}, secondary: {}, tertiary: {}, quaternary: {}, quinary: {} }
-
-export function setThemeColors(colors) {
-
-    const primaryPalette = computeColors(colors.primary),
-        secondaryPalette = computeColors(colors.secondary),
-        teriaryPalette = computeColors(colors.secondary),
-        quaternaryPalette = computeColors(colors.secondary),
-        quinaryPalette = computeColors(colors.secondary);
-
-    palette.primary = Object.assign({}, ...primaryPalette.map((color) => {
-        return { [color.name]: color };
-    }));
-
-    palette.secondary = Object.assign({}, ...secondaryPalette.map((color) => {
-        return { [color.name]: color };
-    }));
-
-    palette.tertiary = Object.assign({}, ...teriaryPalette.map((color) => {
-        return { [color.name]: color };
-    }));
-
-    palette.quaternary = Object.assign({}, ...quaternaryPalette.map((color) => {
-        return { [color.name]: color };
-    }));
-
-    palette.quinary = Object.assign({}, ...quinaryPalette.map((color) => {
-        return { [color.name]: color };
-    }));
-
-    return palette;
-}
 
 export function createTheme(colors) {
+    const baseDefaultTheme = createMuiTheme({});
+
     const theme = createMuiTheme({
         palette: {
             primary: {
@@ -64,16 +32,15 @@ export function createTheme(colors) {
             backgroundColor: colors.primary[500].hex,
             color: colors.secondary[500].hex,
             border: 0,
-            boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+            boxShadow: baseDefaultTheme.shadows[5],
             "&:hover" : {
                 backgroundColor: colors.secondary[500].hex,
                 color: colors.primary[500].hex,
             }
         },
     });
-    console.log("theme: ", theme);
-    console.log("compute: ", computeColors("#F2B705"));
 
+    console.log("theme: ", theme);
     return theme;
 }
 
@@ -110,4 +77,5 @@ export function createTheme(colors) {
 
 // export default theme;
 
-// primary, secondary, tertiary, quaternary, quinary, senary, septenary, octonary, nonary, and denary. There's also a word for twelfth, duodenary
+// primary, secondary, tertiary, quaternary, quinary, senary, septenary, octonary, nonary, and denary.
+// There's also a word for twelfth, duodenary

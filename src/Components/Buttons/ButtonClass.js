@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 const styles = theme => ({
   button: {
     ...theme.button,
-    boxShadow: theme.shadows[1],
+    // boxShadow: theme.shadows[1],
   },
 });
 
