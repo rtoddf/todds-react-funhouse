@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeProvider } from "@material-ui/core/styles";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { setThemeColors, createTheme } from "../Theme";
 
@@ -10,8 +9,8 @@ import Buttons from "./Content/Buttons";
 class App extends React.Component {
   getColors = () => {
     let colors = {
-      primary: "#ae0000",
-      secondary: "#4b0082",
+      primary: "#242326",
+      secondary: "#F2E205",
     }
 
     return setThemeColors(colors);
