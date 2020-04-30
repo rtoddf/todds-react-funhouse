@@ -32,6 +32,21 @@ export function setThemeColors(colors) {
     return palette;
 }
 
+export function setThemeFonts(fonts) {
+    let typography = {"fontSize": fonts.fontSize};
+
+    function getValues(){
+        for (let [key, value] of Object.entries(fonts)) {
+            console.log(`${key}: ${value}`);
+        }
+    }
+    
+    getValues();
+
+    console.log("typography: ", typography)
+    return typography;
+}
+
 function getColorObject(value, name) {
     var c = tinycolor(value);
 
