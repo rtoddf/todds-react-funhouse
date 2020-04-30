@@ -1,7 +1,9 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-export function createTheme(colors) {
+export function createTheme(colors, fonts) {
     const baseDefaultTheme = createMuiTheme({});
+
+    console.log("fonts: ", fonts)
 
     const theme = createMuiTheme({
         palette: {
@@ -22,6 +24,7 @@ export function createTheme(colors) {
             }
         },
         typography: {
+            fonts,
             h3: {
                 fontSize: "1.5rem",
             }

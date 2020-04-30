@@ -1,7 +1,7 @@
 import React from "react";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { createTheme } from "../Theme";
-import { setThemeColors } from "../Theme/helpers";
+import { setThemeColors, setThemeFonts } from "../Theme/helpers";
 
 import Header from "./Content/Header"
 import Cards from "./Content/Cards";
@@ -13,14 +13,14 @@ class App extends React.Component {
       "ui": {
         "theme": {
             "colors": {
-              "primary": "#242326",
+              "primary": "#00579E",
               "secondary": "#F2E205",
               "tertiary": "#F2B705",
               "quaternary": "#F2B705",
               "quinary": "#D96523"
             },
             "fonts": {
-
+              "fontSize": 32
             }
           }
         }
@@ -28,7 +28,7 @@ class App extends React.Component {
     }
 
   render() {
-    let theme = createTheme(setThemeColors(this.state.feed.ui.theme.colors));
+    let theme = createTheme(setThemeColors(this.state.feed.ui.theme.colors), setThemeFonts(this.state.feed.ui.theme.fonts));
 
     return (
       <MuiThemeProvider theme={theme}>
