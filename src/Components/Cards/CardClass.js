@@ -1,5 +1,9 @@
 import React from "react";
 import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from "@material-ui/core/styles";
 
 import image from "../../static/images/cards/comics-kevin-keller.jpg";
@@ -12,10 +16,21 @@ const styles = {
     media: {
       height: 170,
     },
+    formControl: {
+      margin: "5px auto"
+    },
   };
 
 
 class CardClass extends React.Component {
+  state = {
+    subscribe: false
+  }
+
+  handleChange = (event) => {
+    this.setState({subscribe: event.target.checked})
+  };
+
   render() {
     const { classes } = this.props;
 
@@ -36,6 +51,16 @@ class CardClass extends React.Component {
             </Typography>
           </CardContent>
         </CardActionArea>
+        <CardActions>
+          <FormControl component="fieldset" className={classes.formControl}>
+            <FormGroup>
+              <FormControlLabel
+                control={<Checkbox checked={this.state.subscribe} onChange={this.handleChange} name="subscribe" />}
+                label={!this.state.subscribe ? "Sign up" : "Subscribed"}
+              />
+            </FormGroup>
+          </FormControl>
+        </CardActions>
       </Card>
     )
   }
