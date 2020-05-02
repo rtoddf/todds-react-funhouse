@@ -11,5 +11,5 @@ const useStyles = makeStyles((theme) => ({
 
 export default function HookButton() {
     const classes = useStyles();
-    return <Button className={classes.button}>Magic Button</Button>
+    return <Button className={classes.button}>Functional Button</Button>
 }

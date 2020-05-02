@@ -44,6 +44,7 @@ export function createTheme(colors, fonts) {
                 fontSize: "1.5rem",
             },
             tab: {
+                color: colors.tertiary["A100"].hex,
                 fontFamily: "Raleway",
                 fontSize: "1rem",
                 fontWeight: 700,
@@ -51,15 +52,19 @@ export function createTheme(colors, fonts) {
             }
         },
         button: {
-            height: 48,
+            height: 35,
             padding: "0 30px",
-            backgroundColor: colors.primary[500].hex,
-            color: colors.secondary[500].hex,
+            backgroundColor: colors.tertiary[500].hex,
+            color: baseDefaultTheme.palette.common.white,
             border: 0,
             boxShadow: baseDefaultTheme.shadows[5],
+            fontFamily: "Raleway",
+            fontWeight: 600,
+            fontSize: "1rem",
+            textTransform: "none",
             "&:hover" : {
-                backgroundColor: colors.secondary[500].hex,
-                color: colors.primary[500].hex,
+                backgroundColor: colors.quaternary[500].hex,
+                color: baseDefaultTheme.palette.common.white,
             }
         },
     });

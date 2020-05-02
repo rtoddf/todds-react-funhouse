@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "25px"
     },
     button: {
-        backgroundColor: theme.palette.tertiary.main,
-        // color: theme.palette.common.white
+        ...theme.button,
+        marginRight: "25px",
+        marginLeft: "50px",
     }
 }));
 

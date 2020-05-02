@@ -14,11 +14,11 @@ class App extends React.Component {
       "ui": {
         "theme": {
             "colors": {
-              "primary": "#00579E",
-              "secondary": "#F2E205",
-              "tertiary": "#F2B705",
-              "quaternary": "#F2A20C",
-              "quinary": "#D96523"
+              "primary": "#090A0D",
+              "secondary": "#2A3640",
+              "tertiary": "#536473",
+              "quaternary": "#D9B471",
+              "quinary": "#BFA169"
             },
             "fonts": {
               "fontSize": 32
