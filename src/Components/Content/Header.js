@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Toolbar, Typography, Button, IconButton, useScrollTrigger } from '@material-ui/core/';
+import { AppBar, Button, IconButton, Tabs, Tab, Toolbar, Typography, useScrollTrigger } from '@material-ui/core/';
+import { Link } from "react-router-dom";
 // import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
@@ -17,6 +18,18 @@ const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
+    tabContainer: {
+        marginLeft: "auto"
+    },
+    tab: {
+        ...theme.typography.tab,
+        minWidth: 10,
+        marginLeft: "25px"
+    },
+    button: {
+        backgroundColor: theme.palette.tertiary.main,
+        // color: theme.palette.common.white
+    }
 }));
 
 function ElevationScroll(props) {
@@ -40,13 +53,22 @@ const Header = props => {
             <ElevationScroll>
                 <AppBar position="fixed" color="primary">
                     <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        {/* <MenuIcon /> */}
-                    </IconButton>
-                    <Typography variant="h6" className={classes.title}>
-                        News
-                    </Typography>
-                    <Button color="inherit">Login</Button>
+                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                            {/* <MenuIcon /> */}
+                        </IconButton>
+                        <Tabs className={classes.tabContainer}>
+                            <Tab className={classes.tab} label="Home" component={Link} to="/" />
+                            <Tab className={classes.tab} label="Trials" component={Link} to="/trials" />
+                            <Tab className={classes.tab} label="Play" component={Link} to="/play" />
+                            <Tab className={classes.tab} label="Contact" component={Link} to="/contact" />
+                        </Tabs>
+                        <Button variant="contained" className={classes.button}>
+                            News
+                        </Button>
+                        {/* <Typography variant="h6" className={classes.title}>
+                            News
+                        </Typography> */}
+                        {/* <Button>Login</Button> */}
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { createTheme } from "../Theme";
 import { setThemeColors, setThemeFonts } from "../Theme/helpers";
@@ -16,7 +17,7 @@ class App extends React.Component {
               "primary": "#00579E",
               "secondary": "#F2E205",
               "tertiary": "#F2B705",
-              "quaternary": "#F2B705",
+              "quaternary": "#F2A20C",
               "quinary": "#D96523"
             },
             "fonts": {
@@ -32,9 +33,18 @@ class App extends React.Component {
 
     return (
       <MuiThemeProvider theme={theme}>
-        <Header />
-        <Cards />
-        <Buttons />
+        <BrowserRouter>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={() => <div>Home</div>} />
+            <Route exact path="/trials" component={() => <div>Trials</div>} />
+            <Route exact path="/play" component={() => <div>Play</div>} />
+            <Route exact path="/contact" component={() => <div>Contact</div>} />
+          </Switch>
+          <Cards />
+          <Buttons />
+        </BrowserRouter>
+        
       </MuiThemeProvider>
     )
   }

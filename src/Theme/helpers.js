@@ -5,9 +5,9 @@ export function setThemeColors(colors) {
 
     const primaryPalette = computeColors(colors.primary),
         secondaryPalette = computeColors(colors.secondary),
-        teriaryPalette = computeColors(colors.secondary),
-        quaternaryPalette = computeColors(colors.secondary),
-        quinaryPalette = computeColors(colors.secondary);
+        teriaryPalette = computeColors(colors.tertiary),
+        quaternaryPalette = computeColors(colors.quaternary),
+        quinaryPalette = computeColors(colors.quinary);
 
     palette.primary = Object.assign({}, ...primaryPalette.map((color) => {
         return { [color.name]: color };
