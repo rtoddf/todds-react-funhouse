@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Button, IconButton, Tabs, Tab, Toolbar, Typography, useScrollTrigger } from '@material-ui/core/';
 import { Link } from "react-router-dom";
@@ -48,6 +48,11 @@ function ElevationScroll(props) {
 
 const Header = props => {
     const classes = useStyles();
+    const [value, setValue] = useState(0);
+
+    const handleNavChange = (e, value) => {
+        setValue(value)
+    }
 
     return (
         <div className={classes.root}>
@@ -57,7 +62,7 @@ const Header = props => {
                         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                             {/* <MenuIcon /> */}
                         </IconButton>
-                        <Tabs className={classes.tabContainer}>
+                        <Tabs className={classes.tabContainer} value={value} onChange={handleNavChange} indicatorColor="primary">
                             <Tab className={classes.tab} label="Home" component={Link} to="/" />
                             <Tab className={classes.tab} label="Trials" component={Link} to="/trials" />
                             <Tab className={classes.tab} label="Play" component={Link} to="/play" />
