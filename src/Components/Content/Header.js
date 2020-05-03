@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Button, IconButton, Tabs, Tab, Toolbar, Typography, useScrollTrigger } from '@material-ui/core/';
+import { AppBar, Button, Tabs, Tab, Toolbar, Typography, useScrollTrigger } from '@material-ui/core/';
 import { Link } from "react-router-dom";
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -11,6 +11,12 @@ const useStyles = makeStyles((theme) => ({
     toolBarMargin: {
         // spread operator
         ...theme.mixins.toolbar
+    },
+    logo: {
+
+    },
+    logoContainter: {
+        padding: 0
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -54,14 +60,28 @@ const Header = props => {
         setValue(value)
     }
 
+    // useEffect is like componentDidMount
+    // look up what is [value] - exrecise #27
+    useEffect(() => {
+        if (window.location.pathname === "/" && value !== 0){
+            setValue(0)
+        } else if (window.location.pathname === "/trials" && value !== 1){
+            setValue(1)
+        } else if (window.location.pathname === "/play" && value !== 2){
+            setValue(2)
+        } else if (window.location.pathname === "/contact" && value !== 3){
+            setValue(3)
+        }
+    }, [value]);
+
     return (
         <div className={classes.root}>
             <ElevationScroll>
                 <AppBar position="fixed" color="primary">
                     <Toolbar>
-                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                            {/* <MenuIcon /> */}
-                        </IconButton>
+                        <Button className={classes.logoContainter} component={Link} to="/">
+                            {/* // add a logo */}
+                        </Button>
                         <Tabs className={classes.tabContainer} value={value} onChange={handleNavChange} indicatorColor="primary">
                             <Tab className={classes.tab} label="Home" component={Link} to="/" />
                             <Tab className={classes.tab} label="Trials" component={Link} to="/trials" />
@@ -71,10 +91,6 @@ const Header = props => {
                         <Button variant="contained" className={classes.button}>
                             News
                         </Button>
-                        {/* <Typography variant="h6" className={classes.title}>
-                            News
-                        </Typography> */}
-                        {/* <Button>Login</Button> */}
                     </Toolbar>
                 </AppBar>
             </ElevationScroll>
