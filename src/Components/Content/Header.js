@@ -4,6 +4,8 @@ import { AppBar, Button, Tabs, Tab, Toolbar, Typography, useScrollTrigger } from
 import { Link } from "react-router-dom";
 // import MenuIcon from '@material-ui/icons/Menu';
 
+import logo from "../../static/images/logo.jpg"
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -13,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         ...theme.mixins.toolbar
     },
     logo: {
-
+        height: "4em"
     },
     logoContainter: {
         padding: 0
@@ -80,7 +82,7 @@ const Header = props => {
                 <AppBar position="fixed" color="primary">
                     <Toolbar>
                         <Button className={classes.logoContainter} component={Link} to="/">
-                            {/* // add a logo */}
+                            <img src={logo} className={classes.logo} />
                         </Button>
                         <Tabs className={classes.tabContainer} value={value} onChange={handleNavChange} indicatorColor="primary">
                             <Tab className={classes.tab} label="Home" component={Link} to="/" />
