@@ -18,7 +18,10 @@ const useStyles = makeStyles((theme) => ({
         height: "4em"
     },
     logoContainter: {
-        padding: 0
+        padding: 0,
+        "&:hover": {
+            backgroundColor: "transparent"
+        }
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -81,7 +84,7 @@ const Header = props => {
             <ElevationScroll>
                 <AppBar position="fixed" color="primary">
                     <Toolbar>
-                        <Button className={classes.logoContainter} component={Link} to="/">
+                        <Button className={classes.logoContainter} component={Link} to="/" onClick={() => setValue(0)} disableRipple>
                             <img src={logo} className={classes.logo} />
                         </Button>
                         <Tabs className={classes.tabContainer} value={value} onChange={handleNavChange} indicatorColor="primary">
