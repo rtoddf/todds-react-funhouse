@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles } from '@material-ui/core/styles';
 
-import image from "../../static/images/cards/comics-kevin-keller.jpg";
+import image from "../../../static/images/cards/comics-kevin-keller.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {

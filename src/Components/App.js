@@ -4,9 +4,11 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import { createTheme } from "../Theme";
 import { setThemeColors, setThemeFonts } from "../Theme/helpers";
 
-import Header from "./Content/Header"
-import Cards from "./Content/Cards";
-import Buttons from "./Content/Buttons";
+import Header from "./Common/Header";
+import Home from "./Home";
+import Components from "./MaterialUI";
+import Play from "./Play";
+import Layouts from "./Layouts";
 
 class App extends React.Component {
   state = {
@@ -36,13 +38,12 @@ class App extends React.Component {
         <BrowserRouter>
           <Header />
           <Switch>
-            <Route exact path="/" component={() => <div>Home</div>} />
-            <Route exact path="/trials" component={() => <div>Trials</div>} />
-            <Route exact path="/play" component={() => <div>Play</div>} />
-            <Route exact path="/contact" component={() => <div>Contact</div>} />
+            <Route exact path="/" render={() => (<Home />)} />
+            <Route exact path="/components" render={() => (<Components />)} />
+            <Route exact path="/play" render={() => (<Play />)} />
+            <Route exact path="/layouts" render={() => (<Layouts />)} />
+            {/* <Route exact path="/contact" render={props => (<Contact />)} /> */}
           </Switch>
-          <Cards />
-          <Buttons />
         </BrowserRouter>
         
       </MuiThemeProvider>

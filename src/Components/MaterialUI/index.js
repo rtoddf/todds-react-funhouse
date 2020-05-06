@@ -1,8 +1,9 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Container, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import CardFunctional from "../Cards/CardFunctional";
-import CardClass from "../Cards/CardClass";
+import { PageHeading } from "../Common";
+import Cards from "./Cards";
+import Buttons from "./Buttons";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -10,21 +11,22 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Cards = props => {
+const Components = props => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <Container className={classes.root}>
+            <PageHeading title="Material-UI Components" />
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
-                    <CardFunctional />
+                    <Cards />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <CardClass />
+                    <Buttons />
                 </Grid>
             </Grid>
-        </div>
+        </Container>
     )
 }
 
-export default Cards;
+export default Components;

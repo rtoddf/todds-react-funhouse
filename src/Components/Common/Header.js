@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from '@material-ui/core/styles';
-import { AppBar, Button, Tabs, Tab, Toolbar, Typography, useScrollTrigger } from '@material-ui/core/';
+import { AppBar, Button, Tabs, Tab, Toolbar, useScrollTrigger } from '@material-ui/core/';
 import { Link } from "react-router-dom";
 // import MenuIcon from '@material-ui/icons/Menu';
 
@@ -70,7 +70,7 @@ const Header = props => {
     useEffect(() => {
         if (window.location.pathname === "/" && value !== 0){
             setValue(0)
-        } else if (window.location.pathname === "/trials" && value !== 1){
+        } else if (window.location.pathname === "/components" && value !== 1){
             setValue(1)
         } else if (window.location.pathname === "/play" && value !== 2){
             setValue(2)
@@ -89,9 +89,9 @@ const Header = props => {
                         </Button>
                         <Tabs className={classes.tabContainer} value={value} onChange={handleNavChange} indicatorColor="primary">
                             <Tab className={classes.tab} label="Home" component={Link} to="/" />
-                            <Tab className={classes.tab} label="Trials" component={Link} to="/trials" />
+                            <Tab className={classes.tab} label="Components" component={Link} to="/components" />
                             <Tab className={classes.tab} label="Play" component={Link} to="/play" />
-                            <Tab className={classes.tab} label="Contact" component={Link} to="/contact" />
+                            <Tab className={classes.tab} label="Layouts" component={Link} to="/layouts" />
                         </Tabs>
                         <Button variant="contained" className={classes.button}>
                             News
