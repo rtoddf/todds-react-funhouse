@@ -1,8 +1,11 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import CardFunctional from "./CardFunctional";
-import CardClass from "./CardClass";
+import SimpleCardFunctional from "./SimpleCardFunctional";
+import CardFunctional from "./MediaCardFunctional";
+import CardClass from "./MediaCardClass";
+
+import { PageHeading, SectionHeading } from "../../Common";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,7 +17,22 @@ const Cards = props => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
+        <Container className={classes.root}>
+            <PageHeading title="Material-UI Cards" />
+
+            <SectionHeading title="Simple Card" />
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={6}>
+                    <SimpleCardFunctional />
+                </Grid>
+                <Grid item xs={12} md={6}>
+
+                </Grid>
+            </Grid>
+
+            {/* <SectionHeading title="Complex Interaction Card" /> */}
+
+            <SectionHeading title="Media Card" />
             <Grid container spacing={2}>
                 <Grid item xs={12} md={6}>
                     <CardFunctional />
@@ -23,7 +41,9 @@ const Cards = props => {
                     <CardClass />
                 </Grid>
             </Grid>
-        </div>
+
+            {/* <SectionHeading title="UI Controls" /> */}
+        </Container>
     )
 }
 

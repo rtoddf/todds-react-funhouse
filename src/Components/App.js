@@ -10,6 +10,9 @@ import Components from "./MaterialUI";
 import Play from "./Play";
 import Layouts from "./Layouts";
 
+import Cards from "./MaterialUI/Cards"
+import Buttons from "./MaterialUI/Buttons";
+
 class App extends React.Component {
   state = {
     feed: {
@@ -42,7 +45,9 @@ class App extends React.Component {
             <Route exact path="/components" render={() => (<Components />)} />
             <Route exact path="/play" render={() => (<Play />)} />
             <Route exact path="/layouts" render={() => (<Layouts />)} />
-            {/* <Route exact path="/contact" render={props => (<Contact />)} /> */}
+
+            <Route exact path="/cards" render={() => (<Cards />)} />
+            <Route exact path="/buttons" render={() => (<Buttons />)} />
           </Switch>
         </BrowserRouter>
         

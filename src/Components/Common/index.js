@@ -13,3 +13,9 @@ export function PageHeading (props) {
 
     return (<Typography variant="h2" gutterbottom>{props.title}</Typography>)
 }
+
+export function SectionHeading (props) {
+    const classes = useStyles();
+
+    return (<Typography variant="h4" gutterbottom>{props.title}</Typography>)
+}
