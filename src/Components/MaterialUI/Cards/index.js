@@ -10,6 +10,9 @@ import { PageHeading, SectionHeading } from "../../Common";
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
+        marginBottom: "50px",
+        paddingBottom: "50px",
+        borderBottom: "1px solid #999",
     }
 }));
 
@@ -17,33 +20,41 @@ const Cards = props => {
     const classes = useStyles();
 
     return (
-        <Container className={classes.root}>
-            <PageHeading title="Material-UI Cards" />
+        <>
+            <Container className={classes.root}>
+                <PageHeading title="Material-UI Cards" />
 
-            <SectionHeading title="Simple Card" />
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <SimpleCardFunctional />
+                <SectionHeading title="Simple Card" />
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <SimpleCardFunctional />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+
+                    </Grid>
                 </Grid>
-                <Grid item xs={12} md={6}>
+            </Container>
+            
+            <Container className={classes.root}>
+                <SectionHeading title="Complex Interaction Card" />
+            </Container>
 
+            <Container className={classes.root}>
+                <SectionHeading title="Media Card" />
+                <Grid container spacing={2}>
+                    <Grid item xs={12} md={6}>
+                        <CardFunctional />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <CardClass />
+                    </Grid>
                 </Grid>
-            </Grid>
+            </Container>
 
-            {/* <SectionHeading title="Complex Interaction Card" /> */}
-
-            <SectionHeading title="Media Card" />
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <CardFunctional />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <CardClass />
-                </Grid>
-            </Grid>
-
-            {/* <SectionHeading title="UI Controls" /> */}
-        </Container>
+            <Container className={classes.root}>
+                <SectionHeading title="UI Controls" />
+            </Container>
+        </>
     )
 }
 

@@ -40,8 +40,14 @@ export function createTheme(colors, fonts) {
         },
         typography: {
             fonts,
+            h2: {
+                marginBottom: "30px",
+            },
             h3: {
                 fontSize: "1.5rem",
+            },
+            h4: {
+                marginBottom: "20px",
             },
             tab: {
                 color: colors.tertiary["A100"].hex,
