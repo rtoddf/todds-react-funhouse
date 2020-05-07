@@ -23,16 +23,8 @@ const Cards = props => {
         <>
             <Container className={classes.root}>
                 <PageHeading title="Material-UI Cards" />
-
                 <SectionHeading title="Simple Card" />
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                        <SimpleCardFunctional />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-
-                    </Grid>
-                </Grid>
+                <SimpleCardFunctional />
             </Container>
             
             <Container className={classes.root}>

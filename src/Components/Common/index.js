@@ -11,11 +11,11 @@ const useStyles = makeStyles((theme) => ({
 export function PageHeading (props) {
     const classes = useStyles();
 
-    return (<Typography variant="h2" gutterbottom>{props.title}</Typography>)
+    return (<Typography variant="h2" gutterBottom={true}>{props.title}</Typography>)
 }
 
 export function SectionHeading (props) {
     const classes = useStyles();
 
-    return (<Typography variant="h4" gutterbottom>{props.title}</Typography>)
+    return (<Typography variant="h4" gutterBottom={true}>{props.title}</Typography>)
 }

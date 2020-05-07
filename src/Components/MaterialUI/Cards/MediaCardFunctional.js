@@ -45,7 +45,7 @@ const Card01 = () => {
           title="Contemplative Reptile"
         />
         <CardContent>
-          <Typography gutterBottom variant="h3" color="primary">
+          <Typography gutterBottom={true} variant="h3" color="primary">
             Kevin Keller
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
