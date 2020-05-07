@@ -17,7 +17,8 @@ class App extends React.Component {
   state = {
     feed: {
       "ui": {
-        "theme": {
+        "themes": {
+          "interaction": {
             "colors": {
               "primary": "#090A0D",
               "secondary": "#2A3640",
@@ -28,13 +29,40 @@ class App extends React.Component {
             "fonts": {
               "fontSize": 32
             }
+          },
+          "redCarTrolley": {
+            "colors": {
+              "primary": "#2B2120",
+              "secondary": "#594828",
+              "tertiary": "#F0E9CD",
+              "quaternary": "#EC7C4A",
+              "quinary": "#A63429"
+            },
+            "fonts": {
+              "fontSize": 32
+            }
+          },
+          "kurios": {
+            "colors": {
+              "primary": "#698581",
+              "secondary": "#7F9FA0",
+              "tertiary": "#A3CFCC",
+              "quaternary": "#876C56",
+              "quinary": "#494040"
+            },
+            "fonts": {
+              "fontSize": 32
+            }
           }
         }
       }
     }
+  }
 
   render() {
-    let theme = createTheme(setThemeColors(this.state.feed.ui.theme.colors), setThemeFonts(this.state.feed.ui.theme.fonts));
+    const whichTheme = this.state.feed.ui.themes.redCarTrolley;
+
+    let theme = createTheme(setThemeColors(whichTheme.colors), setThemeFonts(whichTheme.fonts));
 
     return (
       <MuiThemeProvider theme={theme}>

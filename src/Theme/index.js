@@ -49,6 +49,13 @@ export function createTheme(colors, fonts) {
             h4: {
                 marginBottom: "20px",
             },
+            body1: {
+                marginBottom: ".875rem",
+                fontSize: "1rem",
+            },
+            body2: {
+                fontStyle: "italic"
+            },
             tab: {
                 color: colors.tertiary["A100"].hex,
                 fontFamily: "Raleway",

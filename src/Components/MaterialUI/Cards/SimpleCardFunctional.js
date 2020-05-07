@@ -6,10 +6,10 @@ import { makeStyles } from '@material-ui/core/styles';
 const data = [
   {
     title: 'Word of the Day',
-    word: 'Lorn',
+    word: 'lorn',
     type: 'adjective',
     pronunced: "lorn",
-    meaning: 'left alone and forlorn : desolate, forsaken.',
+    meaning: ': left alone and forlorn : desolate, forsaken',
     usage: 'It is a lorn place, and the wind has grown shrill, and we come home feeling rather desolate.',
   },
   {
@@ -17,32 +17,36 @@ const data = [
     word: 'quin-tess-ence',
     type: 'noun',
     pronunced: "kwin-TESS-unss",
-    meaning: 'the most typical example or representative.',
+    meaning: ': the most typical example or representative',
     usage: 'Roasting marshmallows over an open fire and making s\'mores is the quintessence of camping in the great outdoors.',
   },
   {
     title: 'Word of the Day',
-    word: 'be-nev-o-lent',
-    type: 'adjective',
-    pronunced: "kwin-TESS-unss",
-    meaning: 'well meaning and kindly.',
-    usage: 'a benevolent smile',
+    word: 'truck-le',
+    type: 'verb',
+    pronunced: "TRUK-ul",
+    meaning: ': to act in a subservient manner : submit',
+    usage: 'Walt Whitman became a pop star for reminding his countrymen of the duty never to truckle: \"Take off your hat to nothing known or unknown or to any man or number of men.\"',
   },
   {
     title: 'Word of the Day',
-    word: 'be-nev-o-lent',
-    type: 'adjective',
-    pronunced: "kwin-TESS-unss",
-    meaning: 'well meaning and kindly.',
-    usage: 'a benevolent smile',
+    word: 'co-lli-mate',
+    type: 'verb',
+    pronunced: "KAH-luh-mayt",
+    meaning: ': to make parallel',
+    usage: 'Amazingly, some astrophysical jets—streams of charged particles collimated and accelerated over astronomical distances—also exhibit a helical structure.',
   }
 ];
+// https://dictionaryapi.com/
 
 const useStyles = makeStyles((theme) => ({
   root: {
     minWidth: 275,
-    backgroundColor: theme.palette.tertiary.main,
-    color: theme.palette.tertiary.contrastText
+    backgroundColor: theme.palette.primary.main,
+    shadow: theme.shadows[5]
+  },
+  gridItem: {
+    display: "flex",
   },
   bullet: {
     display: 'inline-block',
@@ -50,17 +54,29 @@ const useStyles = makeStyles((theme) => ({
     transform: 'scale(0.8)',
   },
   title: {
+    color: theme.palette.primary.light,
     fontSize: 14,
   },
-  pos: {
-    marginBottom: 12,
+  word: {
+    color: theme.palette.primary.contrastText,
   },
+  partOfSpeech: {
+    marginBottom: 12,
+    color: theme.palette.primary.light,
+  },
+  definition: {
+    color: theme.palette.primary.contrastText,
+  },
+  usage: {
+    color: theme.palette.primary.light,
+  }
 }));
 
 const SimpleCardFunctional = props => {
   const classes = useStyles();
   const { loading = false } = props;
 
+  // this can be a helper function
   const flatMap = (array, fn) => {
     var result = [];
     for (var i = 0; i < array.length; i++) {
@@ -71,9 +87,6 @@ const SimpleCardFunctional = props => {
   }
 
   const replaceBullet = (word) => {
-    // console.log("word: ", word);
-    // return word.replace(/-/g, "•");
-
     var result = word;
     result = flatMap(result.split('-'), function (part) {
       return [part, <span className={classes.bullet}>•</span>];
@@ -86,22 +99,22 @@ const SimpleCardFunctional = props => {
   return (
     <Grid container spacing={2}>
       {(loading ? Array.from(new Array(3)) : data).map((item, index) => (
-        <Grid item key={index} xs={12} md={3}>
+        <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
           <Card className={classes.root}>
             <CardContent>
-              <Typography className={classes.title} color="textSecondary" gutterBottom={true}>
+              <Typography className={classes.title} gutterBottom={true}>
                 {item.title}
               </Typography>
-              <Typography variant="h5" component="h2">
+              <Typography className={classes.word} variant="h5">
                 {replaceBullet(item.word)}
-                {/* be{bull}nev{bull}o{bull}lent */}
               </Typography>
-              <Typography className={classes.pos} color="textSecondary">
+              <Typography variant="subtitle2" className={classes.partOfSpeech} gutterBottom={true}>
                 {item.type}
               </Typography>
-              <Typography variant="body2" component="p">
+              <Typography className={classes.definition} variant="body1">
                 {item.meaning}
-                <br />
+              </Typography>
+              <Typography className={classes.usage} variant="body2">
                 {item.usage}
               </Typography>
             </CardContent>
