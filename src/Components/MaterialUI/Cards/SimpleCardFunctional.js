@@ -69,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
   },
   usage: {
     color: theme.palette.primary.light,
+    fontStyle: "italic"
   }
 }));
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from "@material-ui/core";
+import { Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const data = [
@@ -27,18 +27,32 @@ const data = [
 
 const useStyles = makeStyles((theme) => ({
   root: {
+    display: "flex",
+    flexDirection: "column",
     maxWidth: 345,
     margin: "10px auto",
-    shadow: theme.shadows[5],
+    backgroundColor: theme.palette.secondary.main,
   },
   gridItem: {
     display: "flex",
   },
+  cardHeader: {
+    backgroundColor: theme.palette.primary.dark,
+  },
   media: {
     height: 170,
   },
-  formControl: {
-    margin: "5px auto"
+  name: {
+    color: theme.palette.secondary.contrastText,
+    fontWeight: 600,
+  },
+  bio: {
+    color: theme.palette.primary.dark,
+  },
+  cardActions: {
+    marginTop: "auto",
+    minHeight: "10px",
+    backgroundColor: theme.palette.quinary.main,
   },
 }));
 
@@ -50,7 +64,8 @@ const MediaCardFunctional = props => {
     <Grid container spacing={2}>
       {(loading ? Array.from(new Array(3)) : data).map((item, index) => (
         <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
-          <Card className={classes.root}>
+          <Card className={classes.root} variant="outlined">
+            <CardHeader className={classes.cardHeader}></CardHeader>
             <CardActionArea>
               <CardMedia
                 className={classes.media}
@@ -58,14 +73,15 @@ const MediaCardFunctional = props => {
                 title="Contemplative Reptile"
               />
               <CardContent>
-                <Typography gutterBottom={true} variant="h3" color="primary">
+                <Typography className={classes.name} gutterBottom={true} variant="h5">
                   { item.name }
                 </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography className={classes.bio} variant="body2">
                 { item.bio }
                 </Typography>
               </CardContent>
             </CardActionArea>
+            <CardActions className={classes.cardActions}></CardActions>
           </Card>
         </Grid>
       ))}

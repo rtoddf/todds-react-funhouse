@@ -54,7 +54,7 @@ export function createTheme(colors, fonts) {
                 fontSize: "1rem",
             },
             body2: {
-                fontStyle: "italic"
+                
             },
             tab: {
                 color: colors.tertiary["A100"].hex,

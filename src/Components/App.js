@@ -60,7 +60,7 @@ class App extends React.Component {
   }
 
   render() {
-    const whichTheme = this.state.feed.ui.themes.redCarTrolley;
+    const whichTheme = this.state.feed.ui.themes.kurios;
 
     let theme = createTheme(setThemeColors(whichTheme.colors), setThemeFonts(whichTheme.fonts));
 
