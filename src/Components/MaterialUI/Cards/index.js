@@ -33,14 +33,7 @@ const Cards = props => {
 
             <Container className={classes.root}>
                 <SectionHeading title="Media Card" />
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                        <CardFunctional />
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <CardClass />
-                    </Grid>
-                </Grid>
+                <CardFunctional />
             </Container>
 
             <Container className={classes.root}>

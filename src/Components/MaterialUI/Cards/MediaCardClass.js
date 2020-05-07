@@ -22,7 +22,7 @@ const styles = {
   };
 
 
-class CardClass extends React.Component {
+class MediaCardClass extends React.Component {
   state = {
     subscribe: false
   }
@@ -66,4 +66,4 @@ class CardClass extends React.Component {
   }
 }
 
-export default withStyles(styles)(CardClass);
+export default withStyles(styles)(MediaCardClass);
