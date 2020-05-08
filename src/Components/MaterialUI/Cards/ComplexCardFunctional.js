@@ -53,10 +53,10 @@ const useStyles = makeStyles((theme) => ({
   },
   // https://material-ui.com/customization/components/#overriding-styles-with-classes
   boob: {
-    color: "white"
+    color: "white",
   },
   titleBoob: {
-    color: "red"
+    fontSize: "18px"
   }
 }));
 
