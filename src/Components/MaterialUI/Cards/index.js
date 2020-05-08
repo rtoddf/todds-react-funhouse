@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import SimpleCardFunctional from "./SimpleCardFunctional";
 import CardFunctional from "./MediaCardFunctional";
 import CardClass from "./MediaCardClass";
+import ComplexCardFunctional from "./ComplexCardFunctional";
 
 import { PageHeading, SectionHeading } from "../../Common";
 
@@ -29,6 +30,7 @@ const Cards = props => {
             
             <Container className={classes.root}>
                 <SectionHeading title="Complex Interaction Card" />
+                <ComplexCardFunctional />
             </Container>
 
             <Container className={classes.root}>
