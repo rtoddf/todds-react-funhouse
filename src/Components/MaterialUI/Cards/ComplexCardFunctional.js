@@ -51,25 +51,13 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText
   },
-  // overrides: {
-    // Style sheet name ⚛️
-    MuiTypography: {
-      // Name of the rule
-      colorTextSecondary: {
-        // Some CSS
-        color: 'white',
-      },
-    },
-    MuiCardHeader: {
-      // Name of the rule
-      subheader: {
-        text: {
-          // Some CSS
-          color: 'white',
-        },
-      },
-    },
-  // },
+  // https://material-ui.com/customization/components/#overriding-styles-with-classes
+  boob: {
+    color: "white"
+  },
+  titleBoob: {
+    color: "red"
+  }
 }));
 
 const ComplexCardFunctional = props => {
@@ -87,7 +75,8 @@ const ComplexCardFunctional = props => {
         <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
           <Card className={classes.root}>
             <CardHeader
-              className={classes.cardHeader}
+              // className={classes.cardHeader}
+              classes={{ root: classes.cardHeader, subheader: classes.boob, title: classes.titleBoob }}
               avatar={
                 <Avatar aria-label="recipe" className={classes.avatar}>
                   M
