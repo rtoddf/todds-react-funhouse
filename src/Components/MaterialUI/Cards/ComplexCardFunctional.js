@@ -60,7 +60,7 @@ const ComplexCardFunctional = props => {
               </IconButton> */}
               <IconButton
                 className={clsx(classes.expand, {
-                  [classes.expandOpen]: expanded,
+                  [classes.expandOpen]: expanded === index,
                 })}
                 onClick={() => handleExpandClick(index)}
               >
