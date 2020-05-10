@@ -88,11 +88,10 @@ const useStyles = makeStyles((theme) => ({
 const ComplexCardFunctional = props => {
   const classes = useStyles();
   const { loading = false } = props;
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(null);
 
-  const handleExpandClick = (e) => {
-    console.log("e: ", e.target)
-    setExpanded(!expanded);
+  const handleExpandClick = (index) => {
+    setExpanded(index);
   };
 
   return (
@@ -137,12 +136,12 @@ const ComplexCardFunctional = props => {
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
                 })}
-                onClick={() => setExpanded(!expanded)}
+                onClick={() => handleExpandClick(index)}
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded === index} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography className={classes.bio} variant="body2" component="p">
                   { item.moreBio }
