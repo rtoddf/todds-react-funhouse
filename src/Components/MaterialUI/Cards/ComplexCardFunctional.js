@@ -91,7 +91,7 @@ const ComplexCardFunctional = props => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = (e) => {
-    console.log("e: ", e.target)
+    console.log("e: ", e.currentTarget.parentNode.getAttribute("key"))
     setExpanded(!expanded);
   };
 
@@ -137,7 +137,7 @@ const ComplexCardFunctional = props => {
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded,
                 })}
-                onClick={() => setExpanded(!expanded)}
+                onClick={handleExpandClick}
               >
                 <ExpandMoreIcon />
               </IconButton>
