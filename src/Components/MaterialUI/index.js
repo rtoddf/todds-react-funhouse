@@ -49,6 +49,9 @@ const Components = props => {
                             <ListItem button component="a" href="/buttons" className={classes.listItem}>
                                 <ListItemText primary="Buttons" className={classes.listItemtext} />
                             </ListItem>
+                            <ListItem button component="a" href="/dialog" className={classes.listItem}>
+                                <ListItemText primary="Dialog" className={classes.listItemtext} />
+                            </ListItem>
                         </List>
                     </Grid>
                 </Grid>
