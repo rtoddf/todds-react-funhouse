@@ -87,7 +87,7 @@ const Header = props => {
                 <AppBar position="fixed" color="primary">
                     <Toolbar>
                         <Button className={classes.logoContainter} component={Link} to="/" onClick={() => setValue(0)} disableRipple>
-                            <img src={logo} className={classes.logo} />
+                            <img src={logo} className={classes.logo} alt="logo" />
                         </Button>
                         <Tabs className={classes.tabContainer} value={value} onChange={handleNavChange} indicatorColor="primary">
                             <Tab className={classes.tab} label="Home" component={Link} to="/" />

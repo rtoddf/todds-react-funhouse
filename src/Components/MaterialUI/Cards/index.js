@@ -1,9 +1,8 @@
 import React from "react";
-import { Container, Grid } from "@material-ui/core";
+import { Container} from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import SimpleCardFunctional from "./SimpleCardFunctional";
 import CardFunctional from "./MediaCardFunctional";
-import CardClass from "./MediaCardClass";
 import ComplexCardFunctional from "./ComplexCardFunctional";
 
 import { PageHeading, SectionHeading } from "../../Common";
