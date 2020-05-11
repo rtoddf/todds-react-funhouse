@@ -2,19 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 
-import { Avatar, Button, Dialog, Grid, List, ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
+import { Avatar, Button, Dialog, Grid, List, ListItem, ListItemAvatar, ListItemText, Paper } from "@material-ui/core";
 import PersonIcon from "@material-ui/icons/Person";
 import Typography from "@material-ui/core/Typography";
 
-import { quotesy } from "../../../data";
+import { quotes } from "../../../data";
 
-console.log("quotesy: ", quotesy)
-
-const quotes = ["Abraham Lincoln", "Nelson Mandela", "Walt Disney", "Steve Jobs", "Oprah Winfrey", "John Lennon"];
 const useStyles = makeStyles((theme) => ({
-  // gridItem: {
-  //   display: "flex",
-  // },
+  paper: {
+    ...theme.paper,
+    padding: "20px 20px 5px",
+    textAlign: "center"
+  },
   avatar: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText
@@ -28,15 +27,22 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.quinary.main,
       borderColor: theme.palette.quinary.dark,
     }
+  },
+  quote: {
+    margin: "20px 0 10px",
+    color: theme.palette.primary.main,
+    fontStyle: "italic",
   }
 }));
 
 function SimpleDialog(props) {
+  console.log("props: ", props)
+
   const classes = useStyles();
-  const { onClose, selectedValue, open } = props;
+  const { onClose, selectedQuote, selectedAuthor, open } = props;
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose(selectedQuote);
   };
 
   const handleListItemClick = (value) => {
@@ -46,8 +52,8 @@ function SimpleDialog(props) {
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
       <List>
-        {quotesy.map((item, index) => (
-          <ListItem button onClick={() => handleListItemClick(item.author)} key={index}>
+        {quotes.map((item, index) => (
+          <ListItem button onClick={() => handleListItemClick(item)} key={index}>
             <ListItemAvatar>
               <Avatar className={classes.avatar}>
                 <PersonIcon />
@@ -61,37 +67,44 @@ function SimpleDialog(props) {
   );
 }
 
-SimpleDialog.propTypes = {
-  onClose: PropTypes.func.isRequired,
-  open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
-};
+// SimpleDialog.propTypes = {
+//   onClose: PropTypes.func.isRequired,
+//   open: PropTypes.bool.isRequired,
+//   selectedQuote: PropTypes.string.isRequired,
+// };
 
 const SimpleDialogFunctional = () => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(quotes[1]);
+  const [selectedQuote, setSelectedQuote] = React.useState("");
+  const [selectedAuthor, setSelectedAuthor] = React.useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
   const handleClose = (value) => {
+    console.log("value: ", value)
     setOpen(false);
-    setSelectedValue(value);
+    setSelectedQuote(value.quote);
+    setSelectedAuthor(value.author);
   };
 
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={3} className={classes.gridItem}>
-        <Button className={classes.button} variant="outlined" onClick={handleClickOpen}>
-          Choose a Quote Author
-        </Button>
-        <br />
-        <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
-        <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
+      <Grid item xs={12} md={4} className={classes.gridItem}></Grid>
+      <Grid item xs={12} md={4} className={classes.gridItem}>
+        <Paper className={classes.paper}>
+          <Button className={classes.button} variant="outlined" onClick={handleClickOpen}>
+            Choose a Quote Author
+          </Button>
+          <br />
+          <Typography className={classes.quote} variant="subtitle1">{selectedQuote}</Typography>
+          <Typography className={classes.author} variant="subtitle1">{selectedAuthor}</Typography>
+          <SimpleDialog selectedQuote={selectedQuote} open={open} onClose={handleClose} />
+        </Paper>
       </Grid>
-      
+      <Grid item xs={12} md={4} className={classes.gridItem}></Grid>
     </Grid>
   );
 }
