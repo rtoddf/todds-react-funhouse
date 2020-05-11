@@ -1,29 +1,34 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import PropTypes from "prop-types";
+import { makeStyles } from "@material-ui/core/styles";
 
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemText from '@material-ui/core/ListItemText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Dialog from '@material-ui/core/Dialog';
-import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
-import { blue } from '@material-ui/core/colors';
+import { Avatar, Button, Dialog, Grid, List, ListItem, ListItemAvatar, ListItemText } from "@material-ui/core";
+import PersonIcon from "@material-ui/icons/Person";
+import Typography from "@material-ui/core/Typography";
 
-const emails = ['username@gmail.com', 'user02@gmail.com'];
+import { quotesy } from "../../../data";
+
+console.log("quotesy: ", quotesy)
+
+const quotes = ["Abraham Lincoln", "Nelson Mandela", "Walt Disney", "Steve Jobs", "Oprah Winfrey", "John Lennon"];
 const useStyles = makeStyles((theme) => ({
-  gridItem: {
-    display: "flex",
-  },
+  // gridItem: {
+  //   display: "flex",
+  // },
   avatar: {
-    backgroundColor: blue[100],
-    color: blue[600],
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText
   },
+  button: {
+    ...theme.Button,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    borderColor: theme.palette.secondary.dark,
+    "&:hover": {
+      backgroundColor: theme.palette.quinary.main,
+      borderColor: theme.palette.quinary.dark,
+    }
+  }
 }));
 
 function SimpleDialog(props) {
@@ -40,27 +45,17 @@ function SimpleDialog(props) {
 
   return (
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-      <DialogTitle id="simple-dialog-title">Set backup account</DialogTitle>
       <List>
-        {emails.map((email) => (
-          <ListItem button onClick={() => handleListItemClick(email)} key={email}>
+        {quotesy.map((item, index) => (
+          <ListItem button onClick={() => handleListItemClick(item.author)} key={index}>
             <ListItemAvatar>
               <Avatar className={classes.avatar}>
                 <PersonIcon />
               </Avatar>
             </ListItemAvatar>
-            <ListItemText primary={email} />
+            <ListItemText primary={item.author} />
           </ListItem>
         ))}
-
-        <ListItem autoFocus button onClick={() => handleListItemClick('addAccount')}>
-          <ListItemAvatar>
-            <Avatar>
-              <AddIcon />
-            </Avatar>
-          </ListItemAvatar>
-          <ListItemText primary="Add account" />
-        </ListItem>
       </List>
     </Dialog>
   );
@@ -72,9 +67,10 @@ SimpleDialog.propTypes = {
   selectedValue: PropTypes.string.isRequired,
 };
 
-export default function SimpleDialogFunctional() {
+const SimpleDialogFunctional = () => {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
-  const [selectedValue, setSelectedValue] = React.useState(emails[1]);
+  const [selectedValue, setSelectedValue] = React.useState(quotes[1]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -86,13 +82,19 @@ export default function SimpleDialogFunctional() {
   };
 
   return (
-    <div>
-      <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
-      <br />
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open simple dialog
-      </Button>
-      <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={12} md={3} className={classes.gridItem}>
+        <Button className={classes.button} variant="outlined" onClick={handleClickOpen}>
+          Choose a Quote Author
+        </Button>
+        <br />
+        <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
+        <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
+      </Grid>
+      
+    </Grid>
   );
 }
+
+export default SimpleDialogFunctional;
+
