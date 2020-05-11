@@ -42,20 +42,22 @@ const SimpleCard = props => {
     const flatMap = (array, fn) => {
         var result = [];
         for (var i = 0; i < array.length; i++) {
-        var mapping = fn(array[i]);
-        result = result.concat(mapping);
+          var mapping = fn(array[i]);
+          result = result.concat(mapping);
         }
         return result;
     }
 
     const replaceBullet = (word) => {
+        // let newValue = word.replace(/-/g, '•');
         var result = word;
         result = flatMap(result.split('-'), function (part) {
-        return [part, <span className={classes.bullet}>•</span>];
+          return [part, <span className={classes.bullet}>•</span>];
         });
         // Remove the last spacer
         result.pop();
         return <>{result}</>;
+        // return <>{newValue}</>;
     };
 
     return (

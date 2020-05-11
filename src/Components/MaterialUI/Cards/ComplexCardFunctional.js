@@ -54,35 +54,17 @@ const useStyles = makeStyles((theme) => ({
 
 const ComplexCardFunctional = props => {
   const classes = useStyles();
-  const { loading = false } = props;
   const [expanded, setExpanded] = React.useState(null);
-  // const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = (index) => {
-    // switch(index){
-    //   case 0: 
-    //     return setExpanded([true, false, false, false])
-    //   case 1: 
-    //     return setExpanded([false, true, false, false])
-    //   case 2: 
-    //     return setExpanded([false, false, true, false])
-    //   case 3: 
-    //     return setExpanded([false, false, false, true])
-    //   default:
-    //     setExpanded(index);
-    // }
-
-    setExpanded(index);
+    console.log("index: ", index)
+    // that card is open and we want to close it
+    expanded === index ? setExpanded(null) : setExpanded(index);
   };
-
-  // const handleExpandClick = (e) => {
-  //   console.log("e: ", e.target)
-  //   setExpanded(!expanded);
-  // }
 
   return (
     <Grid container spacing={2}>
-      {(loading ? Array.from(new Array(3)) : comics).map((item, index) => (
+      {comics.map((item, index) => (
         <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
           <Card className={classes.root}>
             <CardHeader
@@ -93,11 +75,6 @@ const ComplexCardFunctional = props => {
                   M
                 </Avatar>
               }
-              // action={
-              //   <IconButton aria-label="settings">
-              //     <MoreVertIcon />
-              //   </IconButton>
-              // }
               title={ item.name }
               subheader={ item.source }
             />
@@ -109,29 +86,21 @@ const ComplexCardFunctional = props => {
             <CardContent className={classes.cardContent}>
               <Typography className={classes.bio} variant="body2">
                 <span dangerouslySetInnerHTML={{__html: item.bio}} />
-                {/* { item.bio } */}
               </Typography>
             </CardContent>
             <CardActions className={classes.cardActions} disableSpacing>
-              {/* <IconButton aria-label="add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton aria-label="share">
-                <ShareIcon />
-              </IconButton> */}
               <IconButton
                 className={clsx(classes.expand, {
                   [classes.expandOpen]: expanded === index,
-                  // [classes.expandOpen]: expanded,
                 })}
+                // it knows the index because of the card this is in
                 onClick={() => handleExpandClick(index)}
-                // onClick={() => setExpanded(!expanded)}
               >
                 <ExpandMoreIcon />
               </IconButton>
             </CardActions>
+            {/* // expanded === index is true or false */}
             <Collapse in={expanded === index} timeout="auto" unmountOnExit>
-            {/* <Collapse in={expanded} timeout="auto" unmountOnExit> */}
               <CardContent>
                 <Typography className={classes.bio} variant="body2" component="p">
                   <span dangerouslySetInnerHTML={{__html: item.moreBio}} />
