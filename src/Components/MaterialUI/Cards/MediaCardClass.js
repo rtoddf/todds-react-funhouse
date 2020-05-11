@@ -1,25 +1,38 @@
 import React from "react";
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
-import FormControl from '@material-ui/core/FormControl';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import { Card, CardActionArea, CardActions, CardContent, CardHeader, CardMedia, Grid, Typography } from '@material-ui/core';
 import { withStyles } from "@material-ui/core/styles";
+import { comics } from "../../../data";
 
-import image from "../../../static/images/cards/comics-kevin-keller.jpg";
-
-const styles = {
-    root: {
-      maxWidth: 345,
-      margin: "10px auto"
-    },
-    media: {
-      height: 170,
-    },
-    formControl: {
-      margin: "5px auto"
-    },
-  };
+const styles = theme => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: 345,
+    margin: "10px auto",
+    backgroundColor: theme.palette.secondary.main,
+  },
+  gridItem: {
+    display: "flex",
+  },
+  cardHeader: {
+    backgroundColor: theme.palette.primary.dark,
+  },
+  media: {
+    height: 170,
+  },
+  name: {
+    color: theme.palette.secondary.contrastText,
+    fontWeight: 600,
+  },
+  bio: {
+    color: theme.palette.primary.dark,
+  },
+  cardActions: {
+    marginTop: "auto",
+    minHeight: "10px",
+    backgroundColor: theme.palette.quinary.main,
+  },
+});
 
 
 class MediaCardClass extends React.Component {
@@ -33,35 +46,35 @@ class MediaCardClass extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const { loading = false } = this.props;
 
     return (
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={ image }
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography gutterBottom={true} variant="h3" color="primary">
-              Kevin Keller
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            Kevin Keller is a fictional character in the Archie Comics universe. He premiered in Veronica #202, published in September 2010.  Created by writer/artist Dan Parent, Kevin is the first openly gay character in Archie Comics history.
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <FormControl component="fieldset" className={classes.formControl}>
-            <FormGroup>
-              <FormControlLabel
-                control={<Checkbox checked={this.state.subscribe} onChange={this.handleChange} name="subscribe" />}
-                label={!this.state.subscribe ? "Sign up" : "Subscribed"}
-              />
-            </FormGroup>
-          </FormControl>
-        </CardActions>
-      </Card>
+      <Grid container spacing={2}>
+        {(loading ? Array.from(new Array(3)) : comics).map((item, index) => (
+          <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
+            <Card className={classes.root}>
+              <CardHeader className={classes.cardHeader}></CardHeader>
+              <CardActionArea>
+                <CardMedia
+                  className={classes.media}
+                  image={ item.media }
+                  title={ item.name }
+                />
+                <CardContent>
+                  <Typography className={classes.name} gutterBottom={true} variant="h5">
+                    {item.name}
+                  </Typography>
+                  <Typography className={classes.bio} variant="body2">
+                    <span dangerouslySetInnerHTML={{__html: item.bio}} />
+                    {/* <span dangerouslySetInnerHTML={{__html: item.moreBio}} /> */}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+              <CardActions className={classes.cardActions}></CardActions>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
     )
   }
 }

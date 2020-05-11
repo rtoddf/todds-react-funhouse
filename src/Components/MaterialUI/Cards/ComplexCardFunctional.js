@@ -46,7 +46,10 @@ const useStyles = makeStyles((theme) => ({
   },
   cardHeaderTitle: {
     fontSize: "18px"
-  }
+  },
+  bio: {
+    color: theme.palette.primary.dark,
+  },
 }));
 
 const ComplexCardFunctional = props => {
@@ -104,7 +107,7 @@ const ComplexCardFunctional = props => {
               title={ item.name }
             />
             <CardContent className={classes.cardContent}>
-              <Typography className={classes.bio} variant="body2" component="p">
+              <Typography className={classes.bio} variant="body2">
                 <span dangerouslySetInnerHTML={{__html: item.bio}} />
                 {/* { item.bio } */}
               </Typography>
