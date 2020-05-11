@@ -4,21 +4,18 @@ import { Grid } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { comics } from "../../../data";
 
-const styles = theme => ({
+const styles = () => ({
   gridItem: {
-    display: "flex",
+    display: "flex"
   },
 });
 
-
 class MediaCardClass extends React.Component {
   render() {
-    const { classes } = this.props;
-
     return (
       <Grid container spacing={2}>
         {comics.map((item, index) => (
-          <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
+          <Grid item key={index} xs={12} md={3} className={this.props.classes.gridItem}>
             <MediaCard item={item} />
           </Grid>
         ))}
@@ -27,4 +24,4 @@ class MediaCardClass extends React.Component {
   }
 }
 
-export default withStyles(styles)(MediaCardClass);
+export default withStyles(styles, { withTheme: true })(MediaCardClass);

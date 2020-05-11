@@ -2,13 +2,14 @@ import React from "react";
 import { Container} from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import SimpleCardFunctional from "./SimpleCardFunctional";
+import SimpleCardClass from "./SimpleCardClass";
 import MediaCardFunctional from "./MediaCardFunctional";
 import MediaCardClass from "./MediaCardClass";
 import ComplexCardFunctional from "./ComplexCardFunctional";
 
 import { PageHeading, SectionHeading } from "../../Common";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
         marginBottom: "50px",
@@ -17,15 +18,17 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-const Cards = props => {
+const Cards = () => {
     const classes = useStyles();
 
     return (
         <>
             <Container className={classes.root}>
                 <PageHeading title="Material-UI Cards" />
-                <SectionHeading title="Simple Card" />
+                <SectionHeading title="Simple Card - Functional" />
                 <SimpleCardFunctional />
+                <SectionHeading title="Simple Card - Class" />
+                <SimpleCardClass />
             </Container>
 
             <Container className={classes.root}>
@@ -40,7 +43,6 @@ const Cards = props => {
                 <ComplexCardFunctional />
             </Container>
 
-            
             <Container className={classes.root}>
                 <SectionHeading title="UI Controls" />
             </Container>
