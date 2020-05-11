@@ -17,7 +17,11 @@ const ComplexCardFunctional = props => {
   const [expanded, setExpanded] = React.useState(null);
 
   const handleExpandClick = (index) => {
-    setExpanded(index);
+    if (expanded === index) {
+      setExpanded(null);
+    } else {
+      setExpanded(index);
+    }
   };
 
   return (
