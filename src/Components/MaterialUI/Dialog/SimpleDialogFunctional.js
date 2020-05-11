@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "20px 0 10px",
     color: theme.palette.primary.main,
     fontStyle: "italic",
+  },
+  author: {
+    color: theme.palette.quaternary.main,
   }
 }));
 
@@ -41,12 +44,14 @@ function SimpleDialog(props) {
   const classes = useStyles();
   const { onClose, selectedQuote, selectedAuthor, open } = props;
 
+  console.log("typeof: ", typeof(selectedQuote))
+
   const handleClose = () => {
     onClose(selectedQuote);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
+  const handleListItemClick = (quote) => {
+    onClose(quote);
   };
 
   return (
@@ -67,11 +72,11 @@ function SimpleDialog(props) {
   );
 }
 
-// SimpleDialog.propTypes = {
-//   onClose: PropTypes.func.isRequired,
-//   open: PropTypes.bool.isRequired,
-//   selectedQuote: PropTypes.string.isRequired,
-// };
+SimpleDialog.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  selectedQuote: PropTypes.object.isRequired,
+};
 
 const SimpleDialogFunctional = () => {
   const classes = useStyles();
@@ -84,9 +89,8 @@ const SimpleDialogFunctional = () => {
   };
 
   const handleClose = (value) => {
-    console.log("value: ", value)
     setOpen(false);
-    setSelectedQuote(value.quote);
+    setSelectedQuote({"quote": value.quote, "author": value.author});
     setSelectedAuthor(value.author);
   };
 
@@ -98,10 +102,9 @@ const SimpleDialogFunctional = () => {
           <Button className={classes.button} variant="outlined" onClick={handleClickOpen}>
             Choose a Quote Author
           </Button>
-          <br />
-          <Typography className={classes.quote} variant="subtitle1">{selectedQuote}</Typography>
-          <Typography className={classes.author} variant="subtitle1">{selectedAuthor}</Typography>
-          <SimpleDialog selectedQuote={selectedQuote} open={open} onClose={handleClose} />
+          <Typography className={classes.quote} variant="subtitle1">{selectedQuote.quote}</Typography>
+          <Typography className={classes.author} variant="subtitle2">{selectedQuote.author}</Typography>
+          <SimpleDialog selectedQuote={{ selectedQuote: selectedQuote, selectedAuthor: selectedAuthor }} open={open} onClose={handleClose} />
         </Paper>
       </Grid>
       <Grid item xs={12} md={4} className={classes.gridItem}></Grid>
