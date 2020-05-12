@@ -1,17 +1,10 @@
 import React from "react";
-import { Grid } from "@material-ui/core";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import IconButton from "@material-ui/core/IconButton";
-import Typography from "@material-ui/core/Typography";
+import { Card, CardContent, CardMedia, IconButton, Grid, Typography } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 
-import image from "../../../static/images/cards/500x500bb.jpg";
 import { music01 } from "../../../data/Music";
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
   root: {
     display: "flex",
+    margin: "0 auto",
   },
   details: {
     display: "flex",
@@ -29,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 0 auto",
   },
   cover: {
-    width: 151,
+    width: 160,
   },
   controls: {
     display: "flex",
@@ -45,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   
 const UIControlsCardFunctional = props => {
     const classes = useStyles();
-    const theme = useTheme();
+    // const theme = useTheme();
 
     return (
       <Grid container spacing={2}>
@@ -54,29 +48,31 @@ const UIControlsCardFunctional = props => {
             <Card className={classes.root}>
               <div className={classes.details}>
                 <CardContent className={classes.content}>
-                  <Typography component="h5" variant="h5">
-                    Bang! (2020)
+                  <Typography variant="h5">
+                    { item.title }
                   </Typography>
-                  <Typography variant="subtitle1" color="textSecondary">
-                    AJR
+                  <Typography variant="subtitle1">
+                    { item.artist }
                   </Typography>
                 </CardContent>
                 <div className={classes.controls}>
                   <IconButton aria-label="previous">
-                    {theme.direction === "rtl" ? <SkipNextIcon /> : <SkipPreviousIcon />}
+                    <SkipPreviousIcon />
+                    {/* {theme.direction === "rtl" ? <SkipNextIcon /> : <SkipPreviousIcon />} */}
                   </IconButton>
                   <IconButton aria-label="play/pause">
                     <PlayArrowIcon className={classes.playIcon} />
                   </IconButton>
                   <IconButton aria-label="next">
-                    {theme.direction === "rtl" ? <SkipPreviousIcon /> : <SkipNextIcon />}
+                    <SkipNextIcon />
+                    {/* {theme.direction === "rtl" ? <SkipPreviousIcon /> : <SkipNextIcon />} */}
                   </IconButton>
                 </div>
               </div>
               <CardMedia
                 className={classes.cover}
-                image={image}
-                title="Live from space album cover"
+                image={ item.media }
+                title={ item.title }
               />
             </Card>
           </Grid>
