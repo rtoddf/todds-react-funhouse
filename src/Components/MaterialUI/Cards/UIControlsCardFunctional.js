@@ -14,15 +14,18 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     margin: "0 auto",
+    backgroundColor: theme.palette.primary.main,
+    shadow: theme.shadows[5]
   },
   details: {
     display: "flex",
     flexDirection: "column",
+    color: theme.palette.primary.light,
   },
   content: {
     flex: "1 0 auto",
   },
-  cover: {
+  media: {
     width: 160,
   },
   controls: {
@@ -37,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
   
-const UIControlsCardFunctional = props => {
+const UIControlsCardFunctional = () => {
     const classes = useStyles();
     // const theme = useTheme();
 
@@ -48,10 +51,10 @@ const UIControlsCardFunctional = props => {
             <Card className={classes.root}>
               <div className={classes.details}>
                 <CardContent className={classes.content}>
-                  <Typography variant="h5">
+                  <Typography className={classes.title} variant="h5">
                     { item.title }
                   </Typography>
-                  <Typography variant="subtitle1">
+                  <Typography className={classes.artist} variant="subtitle1">
                     { item.artist }
                   </Typography>
                 </CardContent>
@@ -70,7 +73,7 @@ const UIControlsCardFunctional = props => {
                 </div>
               </div>
               <CardMedia
-                className={classes.cover}
+                className={classes.media}
                 image={ item.media }
                 title={ item.title }
               />
