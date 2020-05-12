@@ -6,6 +6,7 @@ import SimpleCardClass from "./SimpleCardClass";
 import MediaCardFunctional from "./MediaCardFunctional";
 import MediaCardClass from "./MediaCardClass";
 import ComplexCardFunctional from "./ComplexCardFunctional";
+import UIControlsCardFunctional from "./UIControlsCardFunctional";
 
 import { PageHeading, SectionHeading } from "../../Common";
 
@@ -23,6 +24,11 @@ const Cards = () => {
 
     return (
         <>
+            <Container className={classes.root}>
+                <SectionHeading title="UI Controls - Functional" />
+                <UIControlsCardFunctional />
+            </Container>
+            
             <Container className={classes.root}>
                 <PageHeading title="Material-UI Cards" />
                 <SectionHeading title="Simple Card - Functional" />
@@ -43,9 +49,7 @@ const Cards = () => {
                 <ComplexCardFunctional />
             </Container>
 
-            <Container className={classes.root}>
-                <SectionHeading title="UI Controls" />
-            </Container>
+            
         </>
     )
 }
