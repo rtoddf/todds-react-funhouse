@@ -2,7 +2,7 @@ import React from "react";
 import SimpleCard from "./SimpleCard";
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { wordOfTheDay } from "../../../data";
+import { wordOfTheDay01 } from "../../../data/WordOfTheDay";
 // https://dictionaryapi.com/
 
 const useStyles = makeStyles((theme) => ({
@@ -16,7 +16,7 @@ const SimpleCardFunctional = props => {
 
   return (
     <Grid container spacing={2}>
-      {wordOfTheDay.map((item, index) => (
+      {wordOfTheDay01.map((item, index) => (
         <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
           <SimpleCard item={item} />
         </Grid>

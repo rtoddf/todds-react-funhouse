@@ -2,20 +2,20 @@ import React from "react";
 import MediaCard from "./MediaCard";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import { comics } from "../../../data";
+import { comics01 } from "../../../data/Comics";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   gridItem: {
     display: "flex",
   },
 }));
 
-const MediaCardFunctional = props => {
+const MediaCardFunctional = () => {
   const classes = useStyles();
 
   return (
     <Grid container spacing={2}>
-      {comics.map((item, index) => (
+      {comics01.map((item, index) => (
         <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
           <MediaCard item={item} />
         </Grid>

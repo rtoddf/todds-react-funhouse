@@ -1,13 +1,13 @@
 import React from "react";
 import ComplexCard from "./ComplexCard";
 import { Grid } from "@material-ui/core";
-import { comics } from "../../../data";
+import { comics01 } from "../../../data/Comics";
 
 const ComplexCardFunctional = props => {
   return (
     <Grid container spacing={2}>
       
-      {comics.map((item, index) => (
+      {comics01.map((item, index) => (
         <Grid item key={index} xs={12} md={3}>
           <ComplexCard item={item} index={index} />
         </Grid>

@@ -6,7 +6,7 @@ import { Avatar, Button, Dialog, Grid, List, ListItem, ListItemAvatar, ListItemT
 import PersonIcon from "@material-ui/icons/Person";
 import Typography from "@material-ui/core/Typography";
 
-import { quotes } from "../../../data";
+import { quotes } from "../../../data/Quotes";
 
 const useStyles = makeStyles((theme) => ({
   paper: {

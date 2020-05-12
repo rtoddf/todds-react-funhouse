@@ -2,7 +2,7 @@ import React from "react";
 import { Grid } from '@material-ui/core';
 import SimpleCard from "./SimpleCard";
 import { withStyles } from "@material-ui/core/styles";
-import { wordOfTheDay } from "../../../data";
+import { wordOfTheDay02 } from "../../../data/WordOfTheDay";
 
 const styles = () => ({
   gridItem: {
@@ -16,7 +16,7 @@ class SimpleCardClass extends React.Component {
 
     return (
       <Grid container spacing={2}>
-        {wordOfTheDay.map((item, index) => (
+        {wordOfTheDay02.map((item, index) => (
           <Grid item key={index} xs={12} md={3} className={this.props.classes.gridItem}>
             <SimpleCard item={item} />
           </Grid>
