@@ -64,6 +64,52 @@ export function createTheme(colors, fonts) {
                 textTransform: "none"
             }
         },
+        avatar: {
+            default: {
+                margin: "20px auto 5px",
+                borderWidth: 2,
+                borderStyle: "solid",
+                boxShadow: baseDefaultTheme.shadows[3],
+                fontWeight: 600
+            },
+            avatarSm: {
+                width: baseDefaultTheme.spacing(3),
+                height: baseDefaultTheme.spacing(3),
+                fontSize: ".75rem",
+            },
+            avatarMd: {
+                width: baseDefaultTheme.spacing(5),
+                height: baseDefaultTheme.spacing(5),
+                fontSize: "1rem",
+            },
+            avatarLg: {
+                width: baseDefaultTheme.spacing(10),
+                height: baseDefaultTheme.spacing(10),
+                fontSize: "2rem",
+            },
+            avatarXl: {
+                width: baseDefaultTheme.spacing(15),
+                height: baseDefaultTheme.spacing(15),
+                fontSize: "4rem",
+            },
+        },
+        icon: {
+            default: {
+
+            },
+            iconSm: {
+                fontSize: "0.75rem",
+            },
+            iconMd: {
+                fontSize: "1.5rem",
+            },
+            iconLg: {
+                fontSize: "3rem",
+            },
+            iconXl: {
+                fontSize: "6rem",
+            }
+        },
         button: {
             height: 35,
             padding: "0 30px",
