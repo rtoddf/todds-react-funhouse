@@ -3,6 +3,7 @@ import { Container } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 
 import ImageAvatarFunctional from "./ImageAvatarFunctional";
+import LetterAvatarFunctional from "./LetterAvatarFunctional";
 
 import { PageHeading, SectionHeading } from "../../Common";
 
@@ -24,8 +25,8 @@ const Avatar = () => {
           <PageHeading title="Material-UI Avatar" />
           <SectionHeading title="Image Avatars - Functional" />
           <ImageAvatarFunctional />
-          {/* <SectionHeading title="Simple Card - Class" /> */}
-          {/* <SimpleCardClass /> */}
+          <SectionHeading title="Letter Avatars - Functional" />
+          <LetterAvatarFunctional />
       </Container>
     </>
   );
