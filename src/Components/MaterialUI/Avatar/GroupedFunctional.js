@@ -6,7 +6,26 @@ import { makeStyles } from "@material-ui/core/styles";
 import { quotes } from "../../../data/Quotes";
 
 const useStyles = makeStyles((theme) => ({
-
+  gridItem: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  },
+  avatarSm: {
+      ...theme.avatar.avatarSm,
+  },
+  avatarMd: {
+      ...theme.avatar.avatarMd,
+  },
+  avatarLg: {
+      ...theme.avatar.avatarLg,
+      borderWidth: 2,
+      borderStyle: "solid",
+      borderColor: theme.palette.primary.main
+  },
+  avatarXl: {
+      ...theme.avatar.avatarXl,
+  },
 }));
 
 const GroupedFunctional = () => {
@@ -14,11 +33,13 @@ const GroupedFunctional = () => {
 
   return (
     <Grid container spacing={2}>
-      {quotes.map((item, index) => (
-        <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
-          something
-        </Grid>
-      ))}
+      <Grid item xs={12} md={12} className={classes.gridItem}>
+        <AvatarGroup max={6}>
+          {quotes.map((item, index) => (
+            <Avatar key={index} alt={item.author} src={item.media} className={classes.avatarLg} />
+          ))}
+        </AvatarGroup>
+      </Grid>
     </Grid>
   )
 }
