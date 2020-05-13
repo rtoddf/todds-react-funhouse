@@ -10,18 +10,23 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         alignItems: "center"
     },
-    small: {
-        width: theme.spacing(3),
-        height: theme.spacing(3),
+    avatar: {
+        ...theme.avatar.default,
+        color: theme.palette.primary.contrastText,
+        backgroundColor: theme.palette.primary.main,
+        borderColor: theme.palette.primary.dark,
     },
-    large: {
-        width: theme.spacing(10),
-        height: theme.spacing(10),
-        margin: "20px auto 5px",
-        borderWidth: 2,
-        borderStyle: "solid",
-        borderColor: theme.palette.primary.main,
-        boxShadow: theme.shadows[3]
+    avatarSm: {
+        ...theme.avatar.avatarSm,
+    },
+    avatarMd: {
+        ...theme.avatar.avatarMd,
+    },
+    avatarLg: {
+        ...theme.avatar.avatarLg,
+    },
+    avatarXl: {
+        ...theme.avatar.avatarXl,
     },
     author: {
         color: theme.palette.primary.main,
@@ -35,7 +40,7 @@ const ImageAvatarFunctional = () => {
         <Grid container spacing={2}>
             {quotes.map((item, index) => (
                 <Grid item key={index} xs={12} md={3} className={classes.gridItem}>
-                    <Avatar alt={item.author} src={item.media} className={classes.large} />
+                    <Avatar alt={item.author} src={item.media} className={[classes.avatar, classes.avatarLg].join(' ')} />
                     <Typography className={classes.author} variant="body1">{item.author}</Typography>
                 </Grid>
             ))}

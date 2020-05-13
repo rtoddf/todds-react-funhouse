@@ -5,6 +5,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import ImageAvatarFunctional from "./ImageAvatarFunctional";
 import LetterAvatarFunctional from "./LetterAvatarFunctional";
 import IconAvatarFunctional from "./IconAvatarFunctional";
+import GroupedFunctional from "./GroupedFunctional";
+
+import VariantsFunctional from "./VariantsFunctional";
 
 import { PageHeading, SectionHeading } from "../../Common";
 
@@ -30,6 +33,10 @@ const Avatar = () => {
           <LetterAvatarFunctional />
           <SectionHeading title="Icon Avatars - Functional" />
           <IconAvatarFunctional />
+          <SectionHeading title="Grouped - Functional" />
+          <GroupedFunctional />
+          <SectionHeading title="Variants - Functional" />
+          <VariantsFunctional />
       </Container>
     </>
   );
