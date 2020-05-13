@@ -10,6 +10,7 @@ import Components from "./MaterialUI";
 import Play from "./Play";
 import Layouts from "./Layouts";
 
+import Avatar from "./MaterialUI/Avatar"
 import Cards from "./MaterialUI/Cards"
 import Buttons from "./MaterialUI/Buttons";
 import Dialog from "./MaterialUI/Dialog";
@@ -75,6 +76,7 @@ class App extends React.Component {
             <Route exact path="/play" render={() => (<Play />)} />
             <Route exact path="/layouts" render={() => (<Layouts />)} />
 
+            <Route exact path="/avatar" render={() => (<Avatar />)} />
             <Route exact path="/buttons" render={() => (<Buttons />)} />
             <Route exact path="/cards" render={() => (<Cards />)} />
             <Route exact path="/dialog" render={() => (<Dialog />)} />
