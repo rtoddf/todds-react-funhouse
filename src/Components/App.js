@@ -15,6 +15,8 @@ import Cards from "./MaterialUI/Cards"
 import Buttons from "./MaterialUI/Buttons";
 import Dialog from "./MaterialUI/Dialog";
 
+import Overrides from "./Play/Overrides";
+
 class App extends React.Component {
   state = {
     feed: {
@@ -76,10 +78,12 @@ class App extends React.Component {
             <Route exact path="/play" render={() => (<Play />)} />
             <Route exact path="/layouts" render={() => (<Layouts />)} />
 
-            <Route exact path="/avatar" render={() => (<Avatar />)} />
-            <Route exact path="/buttons" render={() => (<Buttons />)} />
-            <Route exact path="/cards" render={() => (<Cards />)} />
-            <Route exact path="/dialog" render={() => (<Dialog />)} />
+            <Route exact path="/components/avatar" render={() => (<Avatar />)} />
+            <Route exact path="/components/buttons" render={() => (<Buttons />)} />
+            <Route exact path="/components/cards" render={() => (<Cards />)} />
+            <Route exact path="/components/dialog" render={() => (<Dialog />)} />
+
+            <Route exact path="/play/overrides" render={() => (<Overrides />)} />
           </Switch>
         </BrowserRouter>
         
