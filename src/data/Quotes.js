@@ -40,6 +40,11 @@ const quotes = [
     media: "http://rtodd.net/images/dialog/eleanor-roosevelt.jpg"
   },
   {
+    quote: "It does not do to dwell on dreams and forget to live.",
+    author: "J.K. Rowling",
+    media: "http://rtodd.net/images/dialog/jk-rowling.jpg"
+  },
+  {
     quote: "You know you're in love when you can't fall asleep because reality is finally better than your dreams.",
     author: "Dr. Seuss",
     media: "http://rtodd.net/images/dialog/dr-seuss.jpg"
