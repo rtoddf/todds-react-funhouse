@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     link: {
-        display: "block"
+        // display: "inline"
     }
 }));
 

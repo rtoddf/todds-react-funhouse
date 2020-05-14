@@ -126,6 +126,29 @@ export function createTheme(colors, fonts) {
                 color: baseDefaultTheme.palette.common.white,
             }
         },
+        overrides: {
+            MuiLink: {
+                root: {
+                    display: "block"
+                }
+            },
+            MuiAvatar: {
+                colorDefault: {
+                    backgroundColor: colors.tertiary[500].hex,
+                    color: colors.primary[900].hex
+                }
+            },
+            MuiAvatarGroup: {
+                avatar: {
+                    width: baseDefaultTheme.spacing(5),
+                    height: baseDefaultTheme.spacing(5),
+                    borderWidth: 2,
+                    borderColor: colors.primary[900].hex,
+                    borderStyle: "solid",
+                    fontSize: "1rem",
+                }
+            }
+        }
     });
 
     console.log("theme: ", theme);

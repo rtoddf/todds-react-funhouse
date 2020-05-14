@@ -15,22 +15,22 @@ const Overrides = () => {
         <PageHeading title="Play - Overrides" />
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
-            <Link className={classes.link} href="https://material-ui.com/" target="_blank" rel="noreferrer">
+            <Link href="https://material-ui.com/" target="_blank" rel="noreferrer">
                 Material-UI
             </Link>
-            <Link className={classes.link} href="https://gist.github.com/mannyblum/e60d4b4bf25bdd6b0bb47ce563431625" target="_blank" rel="noreferrer">
+            <Link href="https://gist.github.com/mannyblum/e60d4b4bf25bdd6b0bb47ce563431625" target="_blank" rel="noreferrer">
                 Sample Create Theme - Manny
             </Link>
-            <Link className={classes.link} href="https://color.adobe.com/mythemes" target="_blank" rel="noreferrer">
+            <Link href="https://color.adobe.com/mythemes" target="_blank" rel="noreferrer">
                 Adobe Color - My Themes
             </Link>
-            <Link className={classes.link} href="https://danilowoz.com/create-content-loader/" target="_blank" rel="noreferrer">
+            <Link href="https://danilowoz.com/create-content-loader/" target="_blank" rel="noreferrer">
                 Create Content Loader
             </Link>
-            <Link className={classes.link} href="https://material-ui.com/components/material-icons/" target="_blank" rel="noreferrer">
+            <Link href="https://material-ui.com/components/material-icons/" target="_blank" rel="noreferrer">
                 Material Icons
             </Link>
-            <Link className={classes.link} href="https://material-ui.com/components/material-icons/" target="_blank" rel="noreferrer">
+            <Link href="https://material-ui.com/components/material-icons/" target="_blank" rel="noreferrer">
                 Material Icons
             </Link>
           </Grid>
