@@ -44,8 +44,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const IconAvatarFunctional = () => {
+const IconAvatarFunctional = props => {
   const classes = useStyles();
+  const theme = props.theme;
 
   return (
     <Grid container spacing={2}>
