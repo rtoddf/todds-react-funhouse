@@ -4,14 +4,6 @@ import { Grid } from "@material-ui/core";
 import { comics01 } from "../../../data/Comics";
 
 const ComplexCardFunctional = props => {
-<<<<<<< HEAD
-  return (
-    <Grid container spacing={2}>
-      
-      {comics01.map((item, index) => (
-        <Grid item key={index} xs={12} md={3}>
-          <ComplexCard item={item} index={index} />
-=======
   const classes = useStyles();
   const { loading = false } = props;
   const [expanded, setExpanded] = React.useState(null);
@@ -79,7 +71,6 @@ const ComplexCardFunctional = props => {
               </CardContent>
             </Collapse>
           </Card>
->>>>>>> setting expand click for multiple cards
         </Grid>
       ))}
     </Grid>
