@@ -1,10 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-
-import { Avatar, Button, Dialog, Grid, List, ListItem, ListItemAvatar, ListItemText, Paper } from "@material-ui/core";
-import PersonIcon from "@material-ui/icons/Person";
-import Typography from "@material-ui/core/Typography";
+import { Avatar, Button, Dialog, Grid, List, ListItem, ListItemAvatar, ListItemText, Paper, Typography } from "@material-ui/core";
 
 import { quotes } from "../../../data/Quotes";
 
@@ -13,10 +10,6 @@ const useStyles = makeStyles((theme) => ({
     ...theme.paper,
     padding: "20px 20px 5px",
     textAlign: "center"
-  },
-  avatar: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText
   },
   button: {
     ...theme.Button,
@@ -28,8 +21,24 @@ const useStyles = makeStyles((theme) => ({
       borderColor: theme.palette.quinary.dark,
     }
   },
+  listItem: {
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
+  listItemText: {
+    alignSelf: "flex-end",
+  },
+  avatar: {
+    ...theme.avatar.default,
+    color: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.primary.main,
+    borderColor: theme.palette.primary.dark,
+  },
+  avatarXl: {
+    ...theme.avatar.avatarXl,
+  },
   quote: {
-    margin: "20px 0 10px",
+    margin: "10px 0",
     color: theme.palette.primary.main,
     fontStyle: "italic",
   },
@@ -44,8 +53,6 @@ function SimpleDialog(props) {
   const classes = useStyles();
   const { onClose, selectedQuote, selectedAuthor, open } = props;
 
-  console.log("typeof: ", typeof(selectedQuote))
-
   const handleClose = () => {
     onClose(selectedQuote);
   };
@@ -58,13 +65,11 @@ function SimpleDialog(props) {
     <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
       <List>
         {quotes.map((item, index) => (
-          <ListItem button onClick={() => handleListItemClick(item)} key={index}>
+          <ListItem className={classes.listItem} button onClick={() => handleListItemClick(item)} key={index}>
             <ListItemAvatar>
-              <Avatar className={classes.avatar}>
-                <PersonIcon />
-              </Avatar>
+              <Avatar className={[classes.avatar].join(' ')} alt={item.author} src={item.media} />
             </ListItemAvatar>
-            <ListItemText primary={item.author} />
+            <ListItemText className={classes.listItemText} primary={item.author} />
           </ListItem>
         ))}
       </List>
@@ -90,7 +95,7 @@ const SimpleDialogFunctional = () => {
 
   const handleClose = (value) => {
     setOpen(false);
-    setSelectedQuote({"quote": value.quote, "author": value.author});
+    setSelectedQuote({"quote": value.quote, "author": value.author, "media": value.media});
     setSelectedAuthor(value.author);
   };
 
@@ -102,6 +107,9 @@ const SimpleDialogFunctional = () => {
           <Button className={classes.button} variant="outlined" onClick={handleClickOpen}>
             Choose a Quote Author
           </Button>
+          {selectedQuote.media && 
+            <Avatar className={[classes.avatar, classes.avatarXl].join(' ')} alt={selectedQuote.author} src={selectedQuote.media} />
+          }
           <Typography className={classes.quote} variant="subtitle1">{selectedQuote.quote}</Typography>
           <Typography className={classes.author} variant="subtitle2">{selectedQuote.author}</Typography>
           <SimpleDialog selectedQuote={{ selectedQuote: selectedQuote, selectedAuthor: selectedAuthor }} open={open} onClose={handleClose} />

@@ -38,24 +38,36 @@ const Components = () => {
                 <Grid container spacing={2}>
                     <PageHeading title="Material-UI Components" />
                     <Grid item xs={12} md={6}>
-                        
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac vehicula justo. Suspendisse blandit urna quam. Sed consequat a massa a semper. Morbi ultricies volutpat felis, ut iaculis nibh varius varius. Vestibulum aliquet accumsan semper. In dapibus a risus elementum molestie. Suspendisse pulvinar euismod cursus. Pellentesque pretium, sem eget imperdiet faucibus, lorem diam commodo massa, ac viverra ante quam in metus. Nulla facilisi. Nullam in nibh vel lectus vehicula tristique. Aliquam nec nulla vestibulum, varius nunc eget, pellentesque quam. Suspendisse varius et ante eu ultrices. Donec dictum aliquam turpis vel euismod. Nulla accumsan, erat ut vulputate aliquet, mi felis euismod velit, vitae laoreet mi sem id magna.</Typography>
+                        <Typography>Data Display</Typography>
                         <List component="nav" className={classes.list}>
                             <ListItem button component="a" href="/components/avatar" className={classes.listItem}>
                                 <ListItemText primary="Avatar" className={classes.listItemtext} />
                             </ListItem>
+                        </List>
+
+                        <Typography>Inputs</Typography>
+                        <List component="nav" className={classes.list}>
                             <ListItem button component="a" href="/components/buttons" className={classes.listItem}>
                                 <ListItemText primary="Buttons" className={classes.listItemtext} />
                             </ListItem>
+                        </List>
+
+                        <Typography>Surfaces</Typography>
+                        <List component="nav" className={classes.list}>
                             <ListItem button component="a" href="/components/cards" className={classes.listItem}>
                                 <ListItemText primary="Cards" className={classes.listItemtext} />
                             </ListItem>
+                        </List>
+
+                        <Typography>Feedback</Typography>
+                        <List component="nav" className={classes.list}>
                             <ListItem button component="a" href="/components/dialog" className={classes.listItem}>
                                 <ListItemText primary="Dialog" className={classes.listItemtext} />
                             </ListItem>
                         </List>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac vehicula justo. Suspendisse blandit urna quam. Sed consequat a massa a semper. Morbi ultricies volutpat felis, ut iaculis nibh varius varius. Vestibulum aliquet accumsan semper. In dapibus a risus elementum molestie. Suspendisse pulvinar euismod cursus. Pellentesque pretium, sem eget imperdiet faucibus, lorem diam commodo massa, ac viverra ante quam in metus. Nulla facilisi. Nullam in nibh vel lectus vehicula tristique. Aliquam nec nulla vestibulum, varius nunc eget, pellentesque quam. Suspendisse varius et ante eu ultrices. Donec dictum aliquam turpis vel euismod. Nulla accumsan, erat ut vulputate aliquet, mi felis euismod velit, vitae laoreet mi sem id magna.</Typography>
                     </Grid>
                 </Grid>
             </Container>

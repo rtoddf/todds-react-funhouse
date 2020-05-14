@@ -22,7 +22,7 @@ const quotes = [
   {
     quote: "Know the rules well, so you can break them effectively.",
     author: "Dalai Lama",
-    media: "http://rtodd.net/images/dialog/dalai-lamam.jpg"
+    media: "http://rtodd.net/images/dialog/dalai-lama.jpg"
   },
   {
     quote: "Life is what happens when you're busy making other plans.",
