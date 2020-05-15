@@ -30,6 +30,14 @@ const wordOfTheDay01 = [
         pronunced: "ver-BOH-tun",
         meaning: ": forbidden; especially : prohibited by dictate",
         usage: "Yet divorce was still frowned on in British society—and marrying a divorcee whose former spouse was still alive was verboten according to the Church of England.",
+    },
+    {
+        title: "Word of the Day",
+        word: "eu-phe-mi-sm",
+        type: "noun",
+        pronunced: "ˈyü-fə-ˌmi-zəm",
+        meaning: ": the substitution of an agreeable or inoffensive expression for one that may offend or suggest something unpleasant",
+        usage: "Cougar is the euphemism for a woman who has reached mid-life, who is single, financially secure and on the lookout for relationships with younger men—as in \"prey.\"",
     }
 ];
 

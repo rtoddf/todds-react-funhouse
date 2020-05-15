@@ -14,7 +14,7 @@ const Select = () => {
   return (
     <>
       <Container className={classes.root}>
-          <PageHeading title="Material-UI Text Field" />
+          <PageHeading title="Material-UI Select" />
       </Container>
     </>
   );

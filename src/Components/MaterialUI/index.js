@@ -67,7 +67,7 @@ const Components = () => {
                             <ListItem button component="a" href="/components/select" className={classes.listItem}>
                                 <ListItemText primary="Select" className={classes.listItemtext} />
                             </ListItem>
-                            <ListItem button component="a" href="/components/textfield" className={classes.listItem}>
+                            <ListItem button component="a" href="/components/text-field" className={classes.listItem}>
                                 <ListItemText primary="Text Field" className={classes.listItemtext} />
                             </ListItem>
                             <ListItem button component="a" href="/components/transfer-list" className={classes.listItem}>

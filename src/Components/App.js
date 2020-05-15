@@ -97,10 +97,19 @@ class App extends React.Component {
             <Route exact path="/links" render={() => (<Links />)} />
 
             <Route exact path="/components/avatar" render={() => (<Avatar />)} />
+            <Route exact path="/components/badges" render={() => (<Badges />)} />
             <Route exact path="/components/buttons" render={() => (<Buttons />)} />
-            <Route exact path="/components/date-time" render={() => (<DateTime />)} />
             <Route exact path="/components/cards" render={() => (<Cards />)} />
+            <Route exact path="/components/chip" render={() => (<Chip />)} />
+            <Route exact path="/components/date-time" render={() => (<DateTime />)} />
             <Route exact path="/components/dialog" render={() => (<Dialog />)} />
+            <Route exact path="/components/media-query" render={() => (<MediaQuery />)} />
+            <Route exact path="/components/progress" render={() => (<Progress />)} />
+            <Route exact path="/components/select" render={() => (<Select />)} />
+            <Route exact path="/components/table" render={() => (<Table />)} />
+            <Route exact path="/components/text-field" render={() => (<TextField />)} />
+            <Route exact path="/components/transfer-list" render={() => (<TransferList />)} />
+            <Route exact path="/components/transitions" render={() => (<Transitions />)} />
 
             <Route exact path="/play/overrides" render={() => (<Overrides />)} />
           </Switch>
