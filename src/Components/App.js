@@ -12,10 +12,24 @@ import Layouts from "./Layouts";
 
 import Links from "./Home/Links";
 
-import Avatar from "./MaterialUI/Avatar"
-import Cards from "./MaterialUI/Cards"
+import Avatar from "./MaterialUI/Avatar";
+import Badges from "./MaterialUI/Badges";
+import Chip from "./MaterialUI/Chip";
+import Table from "./MaterialUI/Table";
+
+import Cards from "./MaterialUI/Cards";
+
 import Buttons from "./MaterialUI/Buttons";
+import DateTime from "./MaterialUI/DateTime";
+import Select from "./MaterialUI/Select";
+import TextField from "./MaterialUI/TextField";
+import TransferList from "./MaterialUI/TransferList";
+
+import Transitions from "./MaterialUI/Transitions";
+import MediaQuery from "./MaterialUI/MediaQuery";
+
 import Dialog from "./MaterialUI/Dialog";
+import Progress from "./MaterialUI/Progress";
 
 import Overrides from "./Play/Overrides";
 
@@ -84,6 +98,7 @@ class App extends React.Component {
 
             <Route exact path="/components/avatar" render={() => (<Avatar />)} />
             <Route exact path="/components/buttons" render={() => (<Buttons />)} />
+            <Route exact path="/components/date-time" render={() => (<DateTime />)} />
             <Route exact path="/components/cards" render={() => (<Cards />)} />
             <Route exact path="/components/dialog" render={() => (<Dialog />)} />
 

@@ -43,6 +43,16 @@ const Components = () => {
                             <ListItem button component="a" href="/components/avatar" className={classes.listItem}>
                                 <ListItemText primary="Avatar" className={classes.listItemtext} />
                             </ListItem>
+
+                            <ListItem button component="a" href="/components/badges" className={classes.listItem}>
+                                <ListItemText primary="Badges" className={classes.listItemtext} />
+                            </ListItem>
+                            <ListItem button component="a" href="/components/chip" className={classes.listItem}>
+                                <ListItemText primary="Chip" className={classes.listItemtext} />
+                            </ListItem>
+                            <ListItem button component="a" href="/components/table" className={classes.listItem}>
+                                <ListItemText primary="Table" className={classes.listItemtext} />
+                            </ListItem>
                         </List>
 
                         <Typography>Inputs</Typography>
@@ -50,19 +60,47 @@ const Components = () => {
                             <ListItem button component="a" href="/components/buttons" className={classes.listItem}>
                                 <ListItemText primary="Buttons" className={classes.listItemtext} />
                             </ListItem>
+
+                            <ListItem button component="a" href="/components/date-time" className={classes.listItem}>
+                                <ListItemText primary="Date/Time" className={classes.listItemtext} />
+                            </ListItem>
+                            <ListItem button component="a" href="/components/select" className={classes.listItem}>
+                                <ListItemText primary="Select" className={classes.listItemtext} />
+                            </ListItem>
+                            <ListItem button component="a" href="/components/textfield" className={classes.listItem}>
+                                <ListItemText primary="Text Field" className={classes.listItemtext} />
+                            </ListItem>
+                            <ListItem button component="a" href="/components/transfer-list" className={classes.listItem}>
+                                <ListItemText primary="Transfer List" className={classes.listItemtext} />
+                            </ListItem>
                         </List>
 
+                        <Typography>Utils</Typography>
+                        <List component="nav" className={classes.list}>
+                            <ListItem button component="a" href="/components/transitions" className={classes.listItem}>
+                                <ListItemText primary="Transitions" className={classes.listItemtext} />
+                            </ListItem>
+                            <ListItem button component="a" href="/components/media-query" className={classes.listItem}>
+                                <ListItemText primary="Media Query" className={classes.listItemtext} />
+                            </ListItem>
+                        </List>
+                        
                         <Typography>Surfaces</Typography>
                         <List component="nav" className={classes.list}>
                             <ListItem button component="a" href="/components/cards" className={classes.listItem}>
                                 <ListItemText primary="Cards" className={classes.listItemtext} />
                             </ListItem>
+                            
                         </List>
 
                         <Typography>Feedback</Typography>
                         <List component="nav" className={classes.list}>
                             <ListItem button component="a" href="/components/dialog" className={classes.listItem}>
                                 <ListItemText primary="Dialog" className={classes.listItemtext} />
+                            </ListItem>
+
+                            <ListItem button component="a" href="/components/progress" className={classes.listItem}>
+                                <ListItemText primary="Progress" className={classes.listItemtext} />
                             </ListItem>
                         </List>
                     </Grid>
