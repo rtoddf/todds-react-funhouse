@@ -147,8 +147,8 @@ export function createTheme(colors, fonts) {
                     borderStyle: "solid",
                     fontSize: "1rem",
                 }
-            }
-        }
+            },
+        },
     });
 
     console.log("theme: ", theme);

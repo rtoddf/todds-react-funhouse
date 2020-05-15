@@ -3,7 +3,7 @@ import ComplexCard from "./ComplexCard";
 import { Grid } from "@material-ui/core";
 import { comics01 } from "../../../data/Comics";
 
-const ComplexCardFunctional = props => {
+const ComplexCardFunctional = () => {
   return (
     <Grid container spacing={2}>
       
