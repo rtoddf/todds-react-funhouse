@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { PageHeading, SectionHeading } from "../../Common";
 import BasicBadgesFunctional from "./BasicBadgesFunctional";
+import CustomizedBadgesFunctional from "./CustomizedBadgesFunctional";
 
 const useStyles = makeStyles(() => ({
 
@@ -18,6 +19,8 @@ const Badges = () => {
           <PageHeading title="Material-UI Badges" />
           <SectionHeading title="Basic Badges - Functional" />
           <BasicBadgesFunctional />
+          <SectionHeading title="Customized Badges - Functional" />
+          <CustomizedBadgesFunctional />
       </Container>
     </>
   );
