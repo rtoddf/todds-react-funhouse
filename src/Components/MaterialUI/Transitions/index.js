@@ -20,7 +20,6 @@ const Transitions = () => {
     <>
       <Container className={classes.root}>
           <PageHeading title="Material-UI Transitions" />
-
           <SectionHeading title="Collapse - Functional" />
           <CollapseFunctional />
           <SectionHeading title="Fade - Functional" />
@@ -29,7 +28,6 @@ const Transitions = () => {
           <GrowFunctional />
           <SectionHeading title="Slide - Functional" />
           <SlideFunctional />
-
           <SectionHeading title="Zoom - Functional" />
           <ZoomFunctional />
       </Container>
