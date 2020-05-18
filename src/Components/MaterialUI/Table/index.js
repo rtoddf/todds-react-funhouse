@@ -17,11 +17,11 @@ const Table = () => {
     <>
       <Container className={classes.root}>
           <PageHeading title="Material-UI Table" />
+
           <SectionHeading title="Simple Table - Functional" />
           <SimpleTableFunctional />
           <SectionHeading title="Customized Table - Functional" />
           <CustomizedTableFunctional />
-
           
       </Container>
     </>
