@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Collapse, Fade, FormControlLabel, Grid, Paper, Switch } from '@material-ui/core';
+import { Fade, FormControlLabel, Grid, Paper, Switch } from '@material-ui/core';
 import AppleIcon from '@material-ui/icons/Apple';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginBottom: 30,
   },
-  // paper: {
-  //   margin: theme.spacing(1),
-  // },
   holder: {
     display: "flex",
     alignItems: "center",
@@ -42,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SimpleCollapse = () => {
+const FadeFunctional = () => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState(false);
 
@@ -58,7 +55,6 @@ const SimpleCollapse = () => {
           label="Show"
         />
       </Grid>
-      {/* collapsedHeight={40} */}
       <Grid item xs={3} className={classes.gridItem}>
         <Fade in={checked}>
           <Paper elevation={4} className={classes.paper}>
@@ -81,4 +77,4 @@ const SimpleCollapse = () => {
   )
 }
 
-export default SimpleCollapse;
+export default FadeFunctional;

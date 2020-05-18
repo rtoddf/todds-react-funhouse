@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Collapse, FormControlLabel, Grid, Paper, Switch } from '@material-ui/core';
+import { FormControlLabel, Grid, Paper, Slide, Switch, Zoom } from '@material-ui/core';
 import AppleIcon from '@material-ui/icons/Apple';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginBottom: 30,
   },
-  // paper: {
-  //   margin: theme.spacing(1),
-  // },
   holder: {
     display: "flex",
     alignItems: "center",
@@ -42,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CollapseFunctional = () => {
+const ZoomFunctional = () => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState(false);
 
@@ -58,27 +55,26 @@ const CollapseFunctional = () => {
           label="Show"
         />
       </Grid>
-      {/* collapsedHeight={40} */}
       <Grid item xs={3} className={classes.gridItem}>
-        <Collapse in={checked}>
+        <Zoom in={checked}>
           <Paper elevation={4} className={classes.paper}>
             <svg className={classes.holder}>
               <polygon points="25,125 75,25, 125,125" className={classes.polygon} />
             </svg>
           </Paper>
-        </Collapse>
+        </Zoom>
       </Grid>
       <Grid item xs={3} className={classes.gridItem}>
-        <Collapse in={checked}>
+        <Zoom in={checked} style={{ transitionDelay: checked ? '500ms' : '0ms' }}>
           <Paper elevation={4} className={classes.paper}>
             <div className={classes.svg}>
               <AppleIcon className={[classes.icon, classes.iconLg].join(' ')} />
             </div>
           </Paper>
-        </Collapse>
+        </Zoom>
       </Grid>
     </Grid>
   )
 }
 
-export default CollapseFunctional;
+export default ZoomFunctional;

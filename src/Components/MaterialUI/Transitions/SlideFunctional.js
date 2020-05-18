@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Collapse, FormControlLabel, Grid, Paper, Switch } from '@material-ui/core';
+import { Grow, FormControlLabel, Grid, Paper, Slide, Switch } from '@material-ui/core';
 import AppleIcon from '@material-ui/icons/Apple';
 
 const useStyles = makeStyles((theme) => ({
@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     marginBottom: 30,
   },
-  // paper: {
-  //   margin: theme.spacing(1),
-  // },
   holder: {
     display: "flex",
     alignItems: "center",
@@ -42,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CollapseFunctional = () => {
+const SlideFunctional = () => {
   const classes = useStyles();
   const [checked, setChecked] = React.useState(false);
 
@@ -58,27 +55,26 @@ const CollapseFunctional = () => {
           label="Show"
         />
       </Grid>
-      {/* collapsedHeight={40} */}
       <Grid item xs={3} className={classes.gridItem}>
-        <Collapse in={checked}>
+        <Slide direction="up" in={checked} mountOnEnter unmountOnExit>
           <Paper elevation={4} className={classes.paper}>
             <svg className={classes.holder}>
               <polygon points="25,125 75,25, 125,125" className={classes.polygon} />
             </svg>
           </Paper>
-        </Collapse>
+        </Slide>
       </Grid>
       <Grid item xs={3} className={classes.gridItem}>
-        <Collapse in={checked}>
+        <Slide direction="right" in={checked} mountOnEnter unmountOnExit>
           <Paper elevation={4} className={classes.paper}>
             <div className={classes.svg}>
               <AppleIcon className={[classes.icon, classes.iconLg].join(' ')} />
             </div>
           </Paper>
-        </Collapse>
+        </Slide>
       </Grid>
     </Grid>
   )
 }
 
-export default CollapseFunctional;
+export default SlideFunctional;
