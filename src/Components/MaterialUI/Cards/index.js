@@ -25,11 +25,6 @@ const Cards = () => {
     return (
         <>
             <Container className={classes.root}>
-                <SectionHeading title="UI Controls - Functional" />
-                <UIControlsCardFunctional />
-            </Container>
-            
-            <Container className={classes.root}>
                 <PageHeading title="Material-UI Cards" />
                 <SectionHeading title="Simple Card - Functional" />
                 <SimpleCardFunctional />
@@ -49,7 +44,10 @@ const Cards = () => {
                 <ComplexCardFunctional />
             </Container>
 
-            
+            <Container className={classes.root}>
+                <SectionHeading title="UI Controls - Functional" />
+                <UIControlsCardFunctional />
+            </Container>
         </>
     )
 }
