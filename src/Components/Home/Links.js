@@ -35,6 +35,9 @@ const Links = props => {
                     <Link className={classes.link} href="https://material-ui.com/customization/default-theme/" target="_blank" rel="noreferrer">
                         Material-UI Default Theme
                     </Link>
+                    <Link className={classes.link} href="http://reactcommunity.org/react-transition-group/transition" target="_blank" rel="noreferrer">
+                        React Transition Group
+                    </Link>
 
                     <Link className={classes.link} href="https://color.adobe.com/mythemes" target="_blank" rel="noreferrer">
                         Adobe Color - My Themes
