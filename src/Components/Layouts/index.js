@@ -1,7 +1,6 @@
 import React from "react";
 import { Avatar, Card, CardContent, CardHeader, Container, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import { PageHeading } from "../Common";
 import { structure } from "../../data/AMS";
 
 const useStyles = makeStyles((theme) => ({
@@ -66,9 +65,12 @@ const Layouts = props => {
     });
 
     return (
-        <Grid container spacing={2}>
-            {outsideCards}
-        </Grid>
+        <Container className={classes.root}>
+            <Grid container spacing={2}>
+                {outsideCards}
+            </Grid>
+        </Container>
+        
     )
 }
 
