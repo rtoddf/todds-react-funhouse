@@ -1,29 +1,74 @@
 import React from "react";
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Avatar, Card, CardContent, CardHeader, Container, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import { PageHeading } from "../Common";
+import { structure } from "../../data/AMS";
 
 const useStyles = makeStyles((theme) => ({
+    gridItem: {
+        display: "flex",
+    },
     root: {
-        flexGrow: 1,
-    }
+        width: "100%",
+        margin: "10px auto",
+        shadow: theme.shadows[5]
+    },
+    cardHeader: {
+        backgroundColor: theme.palette.primary.dark,
+        color: theme.palette.primary.contrastText,
+    },
+    cardHeaderTitle: {
+        fontSize: "18px"
+    },
+    cardHeaderSubheader: {
+        color: theme.palette.common.white,
+    },
 }));
 
 const Layouts = props => {
     const classes = useStyles();
 
-    return (
-        <Container className={classes.root}>
-            <PageHeading title="Layouts" />
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut ac vehicula justo. Suspendisse blandit urna quam. Sed consequat a massa a semper. Morbi ultricies volutpat felis, ut iaculis nibh varius varius. Vestibulum aliquet accumsan semper. In dapibus a risus elementum molestie. Suspendisse pulvinar euismod cursus. Pellentesque pretium, sem eget imperdiet faucibus, lorem diam commodo massa, ac viverra ante quam in metus. Nulla facilisi. Nullam in nibh vel lectus vehicula tristique. Aliquam nec nulla vestibulum, varius nunc eget, pellentesque quam. Suspendisse varius et ante eu ultrices. Donec dictum aliquam turpis vel euismod. Nulla accumsan, erat ut vulputate aliquet, mi felis euismod velit, vitae laoreet mi sem id magna.</Typography>
-                </Grid>
+    const outsideCards = structure.map((item, i) => {
+        return (
+            <Grid key={i} item xs={12} md={6} className={classes.gridItem}>
+                <Card className={classes.root}>
+                    <CardHeader
+                        classes={{ root: classes.cardHeader, title: classes.cardHeaderTitle, subheader: classes.cardHeaderSubheader }}
+                        avatar={
+                            <Avatar className={classes.avatar}>
+                            TV
+                            </Avatar>
+                        }
+                        title={ item.title }
+                        subheader={ item.source }
+                    />
+                    <CardContent>
+                    <Grid container spacing={2}>
+                        {item.options.map((option, j) => (
+                        <Grid key={j} item xs={12} md={6} className={classes.gridItem}>
+                            <Card className={classes.root}>
+                            <CardContent>
+                                <Typography className={classes.bio} variant="body2">
+                                    { option.heading }
+                                </Typography>
+                                <Typography className={classes.bio} variant="body2">
+                                    { option.description }
+                                </Typography>
+                            </CardContent>
+                            </Card>
+                        </Grid>
+                        ))}
+                    </Grid>
+                    </CardContent>
+                </Card>
             </Grid>
-        </Container>
+        )
+    });
+
+    return (
+        <Grid container spacing={2}>
+            {outsideCards}
+        </Grid>
     )
 }
 
