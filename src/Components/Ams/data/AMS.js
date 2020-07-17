@@ -5,22 +5,22 @@ const structure = [
         {
           heading: "Datasources",
           url: "/ams/mobile/datasources",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: "Indexes the content other config files feed from"
         },
         {
           heading: "Home Screen",
           url: "/ams/mobile/homescreen",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: "Home Screen Sections"
         },
         {
           heading: "Livestream",
           url: "/ams/mobile/livestream",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: "Configures live streaming feeds for:"
         },
         {
           heading: "Menu",
           url: "/ams/mobile/menu",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: "Configures the \"Hamburger Menu\" at top left section of app"
         }
       ]
   },
@@ -30,20 +30,45 @@ const structure = [
         {
           heading: "Global Configuration",
           url: "/ams/ott/globalconfig",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: ""
         },
         {
           heading: "Datasources",
           url: "/ams/ott/datasources",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: "Indexes the content other config files feed from"
         },
         {
           heading: "Menu",
           url: "/ams/ott/menu",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
+          description: "Configures the Home Screen Nav Bar"
         }
       ]
   }
 ];
 
+const mobileMenu = [
+  {
+    title: "Watch Now"
+  },
+  {
+    title: "News"
+  },
+  {
+    title: "Weather"
+  },
+  {
+    title: "Multimedia"
+  },
+  {
+    title: "Traffic"
+  },
+  {
+    title: "Lottery"
+  },
+  {
+    title: "Information"
+  },
+]
+
 export { structure };
+export { mobileMenu };

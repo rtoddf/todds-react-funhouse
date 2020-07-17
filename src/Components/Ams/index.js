@@ -70,7 +70,6 @@ const Ams = props => {
                 {outsideCards}
             </Grid>
         </Container>
-        
     )
 }
 
