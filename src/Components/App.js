@@ -8,7 +8,6 @@ import Header from "./Common/Header";
 import Home from "./Home";
 import Components from "./MaterialUI";
 import Play from "./Play";
-import Ams from "./Ams";
 
 import Links from "./Home/Links";
 
@@ -33,6 +32,16 @@ import Dialog from "./MaterialUI/Dialog";
 import Progress from "./MaterialUI/Progress";
 
 import Overrides from "./Play/Overrides";
+
+// AMS Play
+import Ams from "./Ams";
+import AmsMobileDataSources from "./Ams/Mobile/DataSources";
+import AmsMobileHomeScreen from "./Ams/Mobile/HomeScreen";
+import AmsMobileLivestream from "./Ams/Mobile/Livestream";
+import AmsMobileMenu from "./Ams/Mobile/Menu";
+import AmsOttGlobalConfig from "./Ams/Ott/GlobalConfig";
+import AmsOttDataSources from "./Ams/Ott/DataSources";
+import AmsOttMenu from "./Ams/Ott/Menu";
 
 class App extends React.Component {
   state = {
@@ -93,7 +102,15 @@ class App extends React.Component {
             <Route exact path="/" render={() => (<Home />)} />
             <Route exact path="/components" render={() => (<Components />)} />
             <Route exact path="/play" render={() => (<Play />)} />
+
             <Route exact path="/ams" render={() => (<Ams />)} />
+            <Route exact path="/ams/mobile/datasources" render={() => (<AmsMobileDataSources />)} />
+            <Route exact path="/ams/mobile/homescreen" render={() => (<AmsMobileHomeScreen />)} />
+            <Route exact path="/ams/mobile/livestream" render={() => (<AmsMobileLivestream />)} />
+            <Route exact path="/ams/mobile/menu" render={() => (<AmsMobileMenu />)} />
+            <Route exact path="/ams/ott/globalconfig" render={() => (<AmsOttGlobalConfig />)} />
+            <Route exact path="/ams/ott/datasources" render={() => (<AmsOttDataSources />)} />
+            <Route exact path="/ams/ott/menu" render={() => (<AmsOttMenu />)} />
 
             <Route exact path="/links" render={() => (<Links />)} />
 

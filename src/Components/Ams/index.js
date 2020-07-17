@@ -1,7 +1,7 @@
 import React from "react";
 import { Avatar, Card, CardContent, CardHeader, Container, Grid, Typography } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import { structure } from "../../data/AMS";
+import { structure } from "./data/AMS";
 
 const useStyles = makeStyles((theme) => ({
     gridItem: {
@@ -47,7 +47,7 @@ const Ams = props => {
                         <Grid key={j} item xs={12} md={6} className={classes.gridItem}>
                             <Card className={classes.root}>
                             <CardContent>
-                                <Typography className={classes.bio} variant="body2">
+                                <Typography component="a" href={option.url} variant="body2">
                                     { option.heading }
                                 </Typography>
                                 <Typography className={classes.bio} variant="body2">

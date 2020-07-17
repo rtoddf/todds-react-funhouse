@@ -4,21 +4,21 @@ const structure = [
       options: [
         {
           heading: "Datasources",
-          url: "/ams/mobile/menu",
+          url: "/ams/mobile/datasources",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         },
         {
           heading: "Home Screen",
-          url: "/ams/mobile/menu",
+          url: "/ams/mobile/homescreen",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         },
         {
           heading: "Livestream",
-          url: "/ams/mobile/menu",
+          url: "/ams/mobile/livestream",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         },
         {
-          heading: "Hamburger Menu",
+          heading: "Menu",
           url: "/ams/mobile/menu",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         }
@@ -29,17 +29,17 @@ const structure = [
       options: [
         {
           heading: "Global Configuration",
-          url: "/ams/mobile/menu",
+          url: "/ams/ott/globalconfig",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         },
         {
           heading: "Datasources",
-          url: "/ams/mobile/menu",
+          url: "/ams/ott/datasources",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         },
         {
-          heading: "Left Navigation Menu",
-          url: "/ams/mobile/menu",
+          heading: "Menu",
+          url: "/ams/ott/menu",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed tortor at erat eleifend sagittis blandit in enim. Mauris at egestas erat. Proin a velit urna. "
         }
       ]
