@@ -8,7 +8,7 @@ import Header from "./Common/Header";
 import Home from "./Home";
 import Components from "./MaterialUI";
 import Play from "./Play";
-import Ams from "./Layouts";
+import Ams from "./Ams";
 
 import Links from "./Home/Links";
 
