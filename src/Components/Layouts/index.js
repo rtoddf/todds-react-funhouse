@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const Layouts = props => {
+const Ams = props => {
     const classes = useStyles();
 
     const outsideCards = structure.map((item, i) => {
@@ -74,4 +74,4 @@ const Layouts = props => {
     )
 }
 
-export default Layouts;
+export default Ams;

@@ -8,7 +8,7 @@ import Header from "./Common/Header";
 import Home from "./Home";
 import Components from "./MaterialUI";
 import Play from "./Play";
-import Layouts from "./Layouts";
+import Ams from "./Layouts";
 
 import Links from "./Home/Links";
 
@@ -93,7 +93,7 @@ class App extends React.Component {
             <Route exact path="/" render={() => (<Home />)} />
             <Route exact path="/components" render={() => (<Components />)} />
             <Route exact path="/play" render={() => (<Play />)} />
-            <Route exact path="/ams" render={() => (<Layouts />)} />
+            <Route exact path="/ams" render={() => (<Ams />)} />
 
             <Route exact path="/links" render={() => (<Links />)} />
 
