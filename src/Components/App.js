@@ -18,6 +18,7 @@ import Chip from "./MaterialUI/Chip";
 import Table from "./MaterialUI/Table";
 
 import Cards from "./MaterialUI/Cards";
+import Accordian from "./MaterialUI/Accordian";
 
 import Buttons from "./MaterialUI/Buttons";
 import DateTime from "./MaterialUI/DateTime";
@@ -100,6 +101,7 @@ class App extends React.Component {
             <Route exact path="/components/badges" render={() => (<Badges />)} />
             <Route exact path="/components/buttons" render={() => (<Buttons />)} />
             <Route exact path="/components/cards" render={() => (<Cards />)} />
+            <Route exact path="/components/accordian" render={() => (<Accordian />)} />
             <Route exact path="/components/chip" render={() => (<Chip />)} />
             <Route exact path="/components/date-time" render={() => (<DateTime />)} />
             <Route exact path="/components/dialog" render={() => (<Dialog />)} />

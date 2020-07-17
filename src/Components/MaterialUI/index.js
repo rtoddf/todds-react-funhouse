@@ -90,7 +90,9 @@ const Components = () => {
                             <ListItem button component="a" href="/components/cards" className={classes.listItem}>
                                 <ListItemText primary="Cards" className={classes.listItemtext} />
                             </ListItem>
-                            
+                            <ListItem button component="a" href="/components/accordian" className={classes.listItem}>
+                                <ListItemText primary="Accordian" className={classes.listItemtext} />
+                            </ListItem>
                         </List>
 
                         <Typography>Feedback</Typography>
