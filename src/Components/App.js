@@ -93,7 +93,7 @@ class App extends React.Component {
             <Route exact path="/" render={() => (<Home />)} />
             <Route exact path="/components" render={() => (<Components />)} />
             <Route exact path="/play" render={() => (<Play />)} />
-            <Route exact path="/layouts" render={() => (<Layouts />)} />
+            <Route exact path="/ams" render={() => (<Layouts />)} />
 
             <Route exact path="/links" render={() => (<Links />)} />
 
