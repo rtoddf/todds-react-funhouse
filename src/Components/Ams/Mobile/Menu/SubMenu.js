@@ -1,8 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
-import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, Typography } from "@material-ui/core";
-
-import TextField from '@material-ui/core/TextField';
+import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, TextField, Typography } from "@material-ui/core";
+import TypesSources from './TypesSources';
 
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -34,6 +33,12 @@ const useStyles = makeStyles((theme) => ({
   textfield: {
     width: '100%',
   },
+  alignSelf: {
+      alignSelf: "center"
+  },
+  pOverride: {
+     marginBottom: 0, 
+  }
 }));
 
 const SubMenu = (props) => {
@@ -42,7 +47,7 @@ const SubMenu = (props) => {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
-    setExpanded(isExpanded ? panel : false);
+        setExpanded(isExpanded ? panel : false);
     };
 
     const subMenuItems = subMenu.map((item, i) => {
@@ -60,20 +65,39 @@ const SubMenu = (props) => {
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                     <Container className={classes.root}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md={12}>
-                            <Typography className={classes.heading}>Title</Typography>
-                            <TextField
-                                id={`outlined-helperText-${i}`}
-                                label="Menu Title"
-                                defaultValue={item.title}
-                                variant="outlined"
-                                className={classes.textfield}
-                            />
-                            <Typography className={classes.heading}>Content Type</Typography>
-                            <Typography className={classes.heading}>Content Source</Typography>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={12}>
+                                <Typography className={classes.heading}>Title</Typography>
+                                <TextField
+                                    id={`outlined-helperText-${i}`}
+                                    label="Menu Title"
+                                    defaultValue={item.title}
+                                    variant="outlined"
+                                    className={classes.textfield}
+                                />
+
+                                <Container className={classes.root}>
+                                    <Grid container spacing={2}>
+                                        <Grid item xs={12} md={9} className={classes.alignSelf}>
+                                            <Typography className={classes.pOverride}><strong>Content Type: </strong>{item.contentType}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} md={3}>
+                                            <TypesSources type="type" />
+                                        </Grid>
+                                    </Grid>
+                                </Container>
+                                <Container className={classes.root}>
+                                    <Grid container spacing={2}>
+                                        <Grid item xs={12} md={9} className={classes.alignSelf}>
+                                            <Typography className={classes.pOverride}><strong>Content Source: </strong>{item.contentSource}</Typography>
+                                        </Grid>
+                                        <Grid item xs={12} md={3}>
+                                            <TypesSources type="source" />
+                                        </Grid>
+                                    </Grid>
+                                </Container>                                
+                            </Grid>
                         </Grid>
-                    </Grid>
                     </Container>
                 </AccordionDetails>
             </Accordion>
