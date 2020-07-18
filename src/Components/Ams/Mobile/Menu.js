@@ -68,7 +68,7 @@ const Menu = (props) => {
               <Grid item xs={12} md={12}>
                 <TextField
                   id={`outlined-helperText-${i}`}
-                  label="Menu item text"
+                  label="Menu title"
                   defaultValue={item.title}
                   variant="outlined"
                   className={classes.textfield}

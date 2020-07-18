@@ -48,31 +48,34 @@ const MenuItemSecondary = (props) => {
     const accordianSecondaryItems = secondaryMenuItems.map((item, i) => {
         return(
             <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
-            <AccordionSummary
-                className={classes.summary}
-                expandIcon={<ExpandMoreIcon />}
-                id={`panel${i}bh-header`}
-            >
-                <IconButton aria-label="delete">
-                <DeleteIcon />
-                </IconButton>
-                <Typography className={classes.heading}>{item.title}</Typography>
-            </AccordionSummary>
-            <AccordionDetails className={classes.details}>
-                <Container className={classes.root}>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={12}>
-                    <TextField
-                        id={`outlined-helperText-${i}`}
-                        label="Menu item text"
-                        defaultValue={item.title}
-                        variant="outlined"
-                        className={classes.textfield}
-                    />
+                <AccordionSummary
+                    className={classes.summary}
+                    expandIcon={<ExpandMoreIcon />}
+                    id={`panel${i}bh-header`}
+                >
+                    <IconButton aria-label="delete">
+                    <DeleteIcon />
+                    </IconButton>
+                    <Typography className={classes.heading}>{item.title}</Typography>
+                </AccordionSummary>
+                <AccordionDetails className={classes.details}>
+                    <Container className={classes.root}>
+                    <Grid container spacing={2}>
+                        <Grid item xs={12} md={12}>
+                            <Typography className={classes.heading}>Title</Typography>
+                            <TextField
+                                id={`outlined-helperText-${i}`}
+                                label="Menu Title"
+                                defaultValue={item.title}
+                                variant="outlined"
+                                className={classes.textfield}
+                            />
+                            <Typography className={classes.heading}>Content Type</Typography>
+                            <Typography className={classes.heading}>Content Source</Typography>
+                        </Grid>
                     </Grid>
-                </Grid>
-                </Container>
-            </AccordionDetails>
+                    </Container>
+                </AccordionDetails>
             </Accordion>
         );
     });
