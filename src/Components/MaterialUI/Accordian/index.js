@@ -1,7 +1,8 @@
 import React from "react";
 import { Container} from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import SimpleAccordianFunctional from './SimpleAccordianFunctional';
+import SimpleAccordionFunctional from './SimpleAccordionFunctional';
+import ControlledAccordionFunctional from './ControlledAccordionFunctional';
 
 import { PageHeading, SectionHeading } from "../../Common";
 
@@ -20,20 +21,20 @@ const Accordian = () => {
     return (
         <>
             <Container className={classes.root}>
-                <PageHeading title="Material-UI Accordian" />
-                <SectionHeading title="Simple Accordian - Functional" />
-                <SimpleAccordianFunctional />
+                <PageHeading title="Material-UI Accordion" />
+                <SectionHeading title="Simple Accordion - Functional" />
+                <SimpleAccordionFunctional />
                 {/* <SectionHeading title="Simple Card - Class" /> */}
             </Container>
 
-            {/* <Container className={classes.root}>
-                <SectionHeading title="Media Card - Functional" />
-                <MediaCardFunctional />
-                <SectionHeading title="Media Card - Class" />
-                <MediaCardClass />
+            <Container className={classes.root}>
+                <SectionHeading title="Controlled Accordion - Functional" />
+                <ControlledAccordionFunctional />
+                {/* <SectionHeading title="Media Card - Class" />
+                <MediaCardClass /> */}
             </Container>
 
-            <Container className={classes.root}>
+            {/* <Container className={classes.root}>
                 <SectionHeading title="Complex Interaction Card" />
                 <ComplexCardFunctional />
             </Container>

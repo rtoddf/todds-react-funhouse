@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const SimpleAccordianFunctional = props => {
+const SimpleAccordionFunctional = props => {
   const classes = useStyles();
 
   return (
@@ -73,4 +73,4 @@ const SimpleAccordianFunctional = props => {
   )
 }
 
-export default SimpleAccordianFunctional;
+export default SimpleAccordionFunctional;
