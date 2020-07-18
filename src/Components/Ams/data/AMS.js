@@ -49,7 +49,7 @@ const structure = [
 const mobileMenu = [
   {
     title: "Watch Now",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Watch Now",
         contentType: "Content Type",
@@ -64,7 +64,7 @@ const mobileMenu = [
   },
   {
     title: "News",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Breaking News",
         contentType: "Content Type",
@@ -74,7 +74,7 @@ const mobileMenu = [
   },
   {
     title: "Weather",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Weather",
         contentType: "Content Type",
@@ -84,7 +84,7 @@ const mobileMenu = [
   },
   {
     title: "Multimedia",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Multimedia",
         contentType: "Content Type",
@@ -94,7 +94,7 @@ const mobileMenu = [
   },
   {
     title: "Traffic",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Traffic",
         contentType: "Content Type",
@@ -104,7 +104,7 @@ const mobileMenu = [
   },
   {
     title: "Lottery",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Lottery",
         contentType: "Content Type",
@@ -114,7 +114,7 @@ const mobileMenu = [
   },
   {
     title: "Information",
-    secondaryMenuItems: [
+    subMenu: [
       {
         title: "24/7 Information",
         contentType: "Content Type",
@@ -124,5 +124,17 @@ const mobileMenu = [
   },
 ]
 
+const contentTypes = [
+  "Brightcove Url",
+  "Cities",
+  "Currnent Weather",
+  "Debug",
+  "Email",
+  "Extended Forecast Json Feed",
+  "Home",
+  "Image View"
+]
+
 export { structure };
 export { mobileMenu };
+export { contentTypes };

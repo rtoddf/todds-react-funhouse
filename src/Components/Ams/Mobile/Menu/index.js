@@ -7,10 +7,10 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import MenuItemSecondary from './MenuItemSecondary';
+import SubMenu from './SubMenu';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { mobileMenu } from "../data/AMS";
+import { mobileMenu } from "../../data/AMS";
 
 const useStyles = makeStyles((theme) => ({
   // gridItem: {
@@ -49,7 +49,7 @@ const Menu = (props) => {
     setExpanded(isExpanded ? panel : false);
   };
 
-  const accordianItems = mobileMenu.map((item, i) => {
+  const menuItems = mobileMenu.map((item, i) => {
     return(
       <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
         <AccordionSummary
@@ -73,7 +73,7 @@ const Menu = (props) => {
                   variant="outlined"
                   className={classes.textfield}
                 />
-                <MenuItemSecondary secondaryMenuItems={item.secondaryMenuItems} />
+                <SubMenu subMenu={item.subMenu} />
               </Grid>
             </Grid>
           </Container>
@@ -89,7 +89,7 @@ const Menu = (props) => {
             <Typography>Mobile Menu</Typography>
         </Grid>
         <Grid item xs={12} md={6} className={classes.gridItem}>
-          {accordianItems}
+          {menuItems}
         </Grid>
       </Grid>
     </Container>

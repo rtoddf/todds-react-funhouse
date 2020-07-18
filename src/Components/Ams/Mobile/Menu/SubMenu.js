@@ -36,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MenuItemSecondary = (props) => {
-    const { secondaryMenuItems } = props
+const SubMenu = (props) => {
+    const { subMenu } = props
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
 
@@ -45,7 +45,7 @@ const MenuItemSecondary = (props) => {
     setExpanded(isExpanded ? panel : false);
     };
 
-    const accordianSecondaryItems = secondaryMenuItems.map((item, i) => {
+    const subMenuItems = subMenu.map((item, i) => {
         return(
             <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
                 <AccordionSummary
@@ -83,9 +83,9 @@ const MenuItemSecondary = (props) => {
     return (
         <>
             <Typography className={classes.heading}>Submenu Items</Typography>
-            { accordianSecondaryItems }
+            { subMenuItems }
         </>
     )
 }
 
-export default MenuItemSecondary;
+export default SubMenu;
