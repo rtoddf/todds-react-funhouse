@@ -48,25 +48,79 @@ const structure = [
 
 const mobileMenu = [
   {
-    title: "Watch Now"
+    title: "Watch Now",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Watch Now",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      },
+      {
+        title: "24/7 Watch Now II",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
   {
-    title: "News"
+    title: "News",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Breaking News",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
   {
-    title: "Weather"
+    title: "Weather",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Weather",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
   {
-    title: "Multimedia"
+    title: "Multimedia",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Multimedia",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
   {
-    title: "Traffic"
+    title: "Traffic",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Traffic",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
   {
-    title: "Lottery"
+    title: "Lottery",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Lottery",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
   {
-    title: "Information"
+    title: "Information",
+    secondaryMenuItems: [
+      {
+        title: "24/7 Information",
+        contentType: "Content Type",
+        contentSource: "Content Source"
+      }
+    ]
   },
 ]
 
