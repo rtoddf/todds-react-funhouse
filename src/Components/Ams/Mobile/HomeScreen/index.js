@@ -1,7 +1,9 @@
 import React from "react";
+import Sections from "./Sections";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
+import { mobileHomeScreenSections } from "../../data/MobileHomeScreen";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +23,7 @@ const HomeScreen = () => {
             <Typography>Mobile Home Screen</Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          {/* <MainMenu mobileMenu={mobileMenu} /> */}
+          <Sections sections={mobileHomeScreenSections} />
         </Grid>
       </Grid>
     </Container>

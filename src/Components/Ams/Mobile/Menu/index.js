@@ -21,7 +21,7 @@ const Menu = () => {
     <Container className={classes.root}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
-            <Typography>Mobile Menu</Typography>
+          <Typography>Mobile Menu</Typography>
         </Grid>
         <Grid item xs={12} md={6}>
           <MainMenu mobileMenu={mobileMenu} />
