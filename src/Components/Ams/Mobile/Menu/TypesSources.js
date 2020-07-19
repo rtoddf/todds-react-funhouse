@@ -1,8 +1,8 @@
 import React from "react";
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle, InputLabel, Input, FormControl, Select } from "@material-ui/core";
 
-import { contentTypes } from "../../data/AMS";
-import { contentSources } from "../../data/AMS";
+import { contentTypes } from "../../data/MobileMenu";
+import { contentSources } from "../../data/MobileMenu";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({

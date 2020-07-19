@@ -36,7 +36,7 @@ import Overrides from "./Play/Overrides";
 // AMS Play
 import Ams from "./Ams";
 import AmsMobileDataSources from "./Ams/Mobile/DataSources";
-import AmsMobileHomeScreen from "./Ams/Mobile/HomeScreen";
+import AmsMobileHomeScreen from "./Ams/Mobile/HomeScreen/";
 import AmsMobileLivestream from "./Ams/Mobile/Livestream";
 import AmsMobileMenu from "./Ams/Mobile/Menu/";
 import AmsOttGlobalConfig from "./Ams/Ott/GlobalConfig";
