@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, TextField, Typography } from "@material-ui/core";
-import TypesSources from './TypesSources';
+import TypesSources from '../Common/TypesSources';
 
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -67,7 +67,6 @@ const SubMenu = (props) => {
                     <Container className={classes.root}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} md={12}>
-                                <Typography className={classes.heading}>Title</Typography>
                                 <TextField
                                     id={`outlined-helperText-${i}`}
                                     label="Menu Title"
@@ -75,27 +74,19 @@ const SubMenu = (props) => {
                                     variant="outlined"
                                     className={classes.textfield}
                                 />
+                            </Grid>
+                            <Grid item xs={12} md={9} className={classes.alignSelf}>
+                                <Typography className={classes.pOverride}><strong>Content Type: </strong>{item.contentType}</Typography>
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <TypesSources type="type" />
+                            </Grid>
 
-                                <Container className={classes.root}>
-                                    <Grid container spacing={2}>
-                                        <Grid item xs={12} md={9} className={classes.alignSelf}>
-                                            <Typography className={classes.pOverride}><strong>Content Type: </strong>{item.contentType}</Typography>
-                                        </Grid>
-                                        <Grid item xs={12} md={3}>
-                                            <TypesSources type="type" />
-                                        </Grid>
-                                    </Grid>
-                                </Container>
-                                <Container className={classes.root}>
-                                    <Grid container spacing={2}>
-                                        <Grid item xs={12} md={9} className={classes.alignSelf}>
-                                            <Typography className={classes.pOverride}><strong>Content Source: </strong>{item.contentSource}</Typography>
-                                        </Grid>
-                                        <Grid item xs={12} md={3}>
-                                            <TypesSources type="source" />
-                                        </Grid>
-                                    </Grid>
-                                </Container>                                
+                            <Grid item xs={12} md={9} className={classes.alignSelf}>
+                                <Typography className={classes.pOverride}><strong>Content Source: </strong>{item.contentSource}</Typography>
+                            </Grid>
+                            <Grid item xs={12} md={3}>
+                                <TypesSources type="source" />
                             </Grid>
                         </Grid>
                     </Container>

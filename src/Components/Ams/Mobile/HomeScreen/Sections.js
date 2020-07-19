@@ -1,4 +1,5 @@
 import React from "react";
+import TypesSources from '../Common/TypesSources';
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, Typography } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
@@ -44,6 +45,7 @@ const Sections = (props) => {
     };
   
     const sectionItemsStructure = sections.map((item, i) => {
+      console.log('item: ', item)
       return(
         <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
           <AccordionSummary
@@ -62,12 +64,32 @@ const Sections = (props) => {
                 <Grid item xs={12} md={12}>
                   <TextField
                     id={`outlined-helperText-${i}`}
-                    label="Menu title"
+                    label="Section Header Name"
                     defaultValue={item.title}
                     variant="outlined"
                     className={classes.textfield}
                   />
-                  {/* <SubMenu subMenu={item.subMenu} /> */}
+                </Grid>
+                <Grid item xs={12} md={9} className={classes.alignSelf}>
+                    <Typography className={classes.pOverride}><strong>Content Type: </strong>{item.contentType}</Typography>
+                </Grid>
+                <Grid item xs={12} md={3}>
+                    <TypesSources type="type" />
+                </Grid>
+                <Grid item xs={12} md={9} className={classes.alignSelf}>
+                    <Typography className={classes.pOverride}><strong>Content Source: </strong>{item.contentSource}</Typography>
+                </Grid>
+                <Grid item xs={12} md={3}>
+                    <TypesSources type="source" />
+                </Grid>
+                <Grid item xs={12} md={3}>
+                  <TextField
+                    id={`outlined-helperText-${i}`}
+                    label="Story Count"
+                    defaultValue={item.storyCount}
+                    variant="outlined"
+                    className={classes.textfield}
+                  />
                 </Grid>
               </Grid>
             </Container>
