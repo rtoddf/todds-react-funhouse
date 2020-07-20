@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-key */
 import React from "react";
 import MainMenu from "./MainMenu";
-import AddNew from "./AddNew";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -23,7 +22,6 @@ const Menu = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} md={12}>
           <Typography>Mobile Menu</Typography>
-          <AddNew />
         </Grid>
         <Grid item xs={12} md={6}>
           <MainMenu mobileMenu={mobileMenu} />

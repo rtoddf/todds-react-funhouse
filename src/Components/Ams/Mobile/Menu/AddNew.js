@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         ...theme.button,
+        marginTop: '20px',
         boxShadow: theme.shadows[1],
     },
     textfield: {

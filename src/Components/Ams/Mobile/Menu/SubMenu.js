@@ -2,6 +2,7 @@
 import React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, TextField, Typography } from "@material-ui/core";
 import TypesSources from '../Common/TypesSources';
+import AddNew from "./AddNew";
 
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -107,6 +108,7 @@ const SubMenu = (props) => {
         <>
             <Typography className={classes.heading}>Submenu Items</Typography>
             { subMenuItems }
+            <AddNew />
         </>
     )
 }
