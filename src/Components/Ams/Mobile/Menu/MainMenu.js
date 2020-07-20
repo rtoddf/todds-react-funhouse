@@ -7,6 +7,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import SubMenu from './SubMenu';
+import AddNew from "../Common/AddNew";
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -83,7 +84,8 @@ const MainMenu = (props) => {
   
     return (
         <>
-            {menuItemsStructure}
+          <AddNew type="menu" />
+          {menuItemsStructure}
         </>
     )
   }

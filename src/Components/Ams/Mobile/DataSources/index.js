@@ -1,7 +1,10 @@
 import React from "react";
+import Sources from "./Sources";
+import AddNew from "../Common/AddNew";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
+import { mobileDataSources } from "../../data/MobileDataSources";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +24,8 @@ const DataSources = () => {
             <Typography>Mobile Data Sources</Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          {/* <Sections sections={mobileHomeScreenSections} /> */}
+          <AddNew type="source" />
+          <Sources sources={mobileDataSources} />
         </Grid>
       </Grid>
     </Container>

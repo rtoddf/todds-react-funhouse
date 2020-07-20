@@ -24,8 +24,8 @@ const HomeScreen = () => {
             <Typography>Mobile Home Screen</Typography>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Sections sections={mobileHomeScreenSections} />
           <AddNew type="section" />
+          <Sections sections={mobileHomeScreenSections} />
         </Grid>
       </Grid>
     </Container>

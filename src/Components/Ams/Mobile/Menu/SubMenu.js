@@ -108,8 +108,8 @@ const SubMenu = (props) => {
     return (
         <>
             <Typography className={classes.heading}>Submenu Items</Typography>
-            { subMenuItems }
             <AddNew type="menu" />
+            { subMenuItems }
         </>
     )
 }
