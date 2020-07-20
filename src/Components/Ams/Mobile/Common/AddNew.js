@@ -24,6 +24,10 @@ const useStyles = makeStyles((theme) => ({
 }));
   
 const AddNew = (props) => {
+    const { type } = props;
+
+    const typeText = type === 'menu' ? 'Menu Item' : 'Section Header';
+
     const classes = useStyles();
     const [open, setOpen] = React.useState(false);
     const [contentTypeChoice, setContentTypeChoice] = React.useState('');
@@ -47,9 +51,9 @@ const AddNew = (props) => {
 
     return (
         <div>
-            <Button className={classes.button} onClick={handleClickOpen}>Add new menu item</Button>
+            <Button className={classes.button} onClick={handleClickOpen}>Add New { typeText }</Button>
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-                <DialogTitle>Add new menu item</DialogTitle>
+                <DialogTitle>Add New { typeText }</DialogTitle>
                 <DialogContent>
                     <form className={classes.container}>
                         <Grid container spacing={2}>
@@ -98,6 +102,19 @@ const AddNew = (props) => {
                                     </Select>
                                 </FormControl>
                             </Grid>
+                            {type === 'section' && (
+                                <Grid item md={12}>
+                                    <FormControl classes={classes.formControl}>
+                                    <TextField
+                                        id={`outlined-helperText`}
+                                        label="Story Count"
+                                        defaultValue=""
+                                        variant="outlined"
+                                        className={classes.textfield}
+                                    />
+                                    </FormControl>
+                                </Grid>
+                            )}
                         </Grid>
                     </form>
                 </DialogContent>

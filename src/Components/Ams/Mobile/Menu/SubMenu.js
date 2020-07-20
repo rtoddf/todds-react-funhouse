@@ -2,7 +2,7 @@
 import React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, TextField, Typography } from "@material-ui/core";
 import TypesSources from '../Common/TypesSources';
-import AddNew from "./AddNew";
+import AddNew from "../Common/AddNew";
 
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SubMenu = (props) => {
+    // eslint-disable-next-line react/prop-types
     const { subMenu } = props
     const classes = useStyles();
     const [expanded, setExpanded] = React.useState(false);
@@ -108,7 +109,7 @@ const SubMenu = (props) => {
         <>
             <Typography className={classes.heading}>Submenu Items</Typography>
             { subMenuItems }
-            <AddNew />
+            <AddNew type="menu" />
         </>
     )
 }

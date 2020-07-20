@@ -1,5 +1,6 @@
 import React from "react";
 import Sections from "./Sections";
+import AddNew from "../Common/AddNew";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -24,6 +25,7 @@ const HomeScreen = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Sections sections={mobileHomeScreenSections} />
+          <AddNew type="section" />
         </Grid>
       </Grid>
     </Container>
