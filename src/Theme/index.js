@@ -148,6 +148,11 @@ export function createTheme(colors, fonts) {
                     fontSize: "1rem",
                 }
             },
+            MuiFormControl: {
+                root: {
+                    width: "100%",
+                }
+            }
         },
     });
 
