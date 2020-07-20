@@ -18,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
   demo: {
     backgroundColor: theme.palette.background.paper,
   },
+  accordianItem: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.common.white,
+    shadow: theme.shadows[5],
+  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     flexBasis: '33.33%',
@@ -38,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
   },
   pOverride: {
      marginBottom: 0, 
+  },
+  icons: {
+    color: theme.palette.primary.contrastText,
   }
 }));
 
@@ -52,14 +60,14 @@ const SubMenu = (props) => {
 
     const subMenuItems = subMenu.map((item, i) => {
         return(
-            <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
+            <Accordion className={classes.accordianItem} key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
                 <AccordionSummary
                     className={classes.summary}
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon className={classes.icons} />}
                     id={`panel${i}bh-header`}
                 >
                     <IconButton aria-label="delete">
-                    <DeleteIcon />
+                        <DeleteIcon className={classes.icons} />
                     </IconButton>
                     <Typography className={classes.heading}>{item.title}</Typography>
                 </AccordionSummary>

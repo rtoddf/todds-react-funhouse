@@ -16,8 +16,9 @@ const useStyles = makeStyles((theme) => ({
       margin: "10px auto",
       shadow: theme.shadows[5]
   },
-  demo: {
-    backgroundColor: theme.palette.background.paper,
+  accordianItem: {
+    backgroundColor: theme.palette.common.white,
+    shadow: theme.shadows[5],
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -33,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textfield: {
     width: '100%',
+    // backgroundColor: theme.palette.common.white,
   },
 }));
 
@@ -48,7 +50,7 @@ const MainMenu = (props) => {
   
     const menuItemsStructure = mobileMenu.map((item, i) => {
       return(
-        <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
+        <Accordion className={classes.accordianItem} key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
           <AccordionSummary
             className={classes.summary}
             expandIcon={<ExpandMoreIcon />}

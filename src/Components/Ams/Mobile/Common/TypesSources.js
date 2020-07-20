@@ -14,6 +14,10 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         minWidth: 120,
     },
+    button: {
+        ...theme.button,
+        boxShadow: theme.shadows[1],
+    },
 }));
   
 const TypesSources = (props) => {
@@ -38,7 +42,7 @@ const TypesSources = (props) => {
 
     return (
         <div>
-            <Button onClick={handleClickOpen}>Change</Button>
+            <Button className={classes.button} onClick={handleClickOpen}>Change</Button>
             <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
                 <DialogTitle>Select a Content {type == "type" ? "Type" : "Source"}</DialogTitle>
                 <DialogContent>
