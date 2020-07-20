@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DragHandleIcon from '@material-ui/icons/DragHandle';
 
 import SubMenu from './SubMenu';
 import AddNew from "../Common/AddNew";
@@ -35,8 +36,10 @@ const useStyles = makeStyles((theme) => ({
   },
   textfield: {
     width: '100%',
-    // backgroundColor: theme.palette.common.white,
   },
+  trashIcon: {
+    marginLeft: "auto"
+  }
 }));
 
 const MainMenu = (props) => {
@@ -56,11 +59,15 @@ const MainMenu = (props) => {
             className={classes.summary}
             expandIcon={<ExpandMoreIcon />}
             id={`panel${i}bh-header`}
+            justify="space-between"
           >
-            <IconButton aria-label="delete">
-              <DeleteIcon />
+            <IconButton aria-label="drag">
+              <DragHandleIcon />
             </IconButton>
             <Typography className={classes.heading}>{item.title}</Typography>
+            <IconButton className={classes.trashIcon} aria-label="delete">
+              <DeleteIcon />
+            </IconButton>
           </AccordionSummary>
           <AccordionDetails className={classes.details}>
             <Container className={classes.root}>

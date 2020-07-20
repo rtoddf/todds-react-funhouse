@@ -54,7 +54,7 @@ const Sources = (props) => {
             id={`panel${i}bh-header`}
           >
             <IconButton aria-label="delete">
-              <DeleteIcon />
+              {/* <DeleteIcon /> */}
             </IconButton>
             <Typography className={classes.heading}>{item.title}</Typography>
           </AccordionSummary>

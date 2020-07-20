@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DragHandleIcon from '@material-ui/icons/DragHandle';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -32,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
     textfield: {
       width: '100%',
     },
+    trashIcon: {
+      marginLeft: "auto"
+    }
 }));
 
 const Sections = (props) => {
@@ -45,7 +49,6 @@ const Sections = (props) => {
     };
   
     const sectionItemsStructure = sections.map((item, i) => {
-      console.log('item: ', item)
       return(
         <Accordion key={i} expanded={expanded === `panel${i}`} onChange={handleChange(`panel${i}`)}>
           <AccordionSummary
@@ -53,10 +56,13 @@ const Sections = (props) => {
             expandIcon={<ExpandMoreIcon />}
             id={`panel${i}bh-header`}
           >
-            <IconButton aria-label="delete">
-              <DeleteIcon />
+            <IconButton aria-label="drag">
+                <DragHandleIcon />
             </IconButton>
             <Typography className={classes.heading}>{item.title}</Typography>
+            <IconButton className={classes.trashIcon} aria-label="delete">
+                <DeleteIcon />
+            </IconButton>
           </AccordionSummary>
           <AccordionDetails className={classes.details}>
             <Container className={classes.root}>

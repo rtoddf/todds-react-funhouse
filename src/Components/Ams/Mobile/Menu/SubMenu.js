@@ -7,6 +7,7 @@ import AddNew from "../Common/AddNew";
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import DragHandleIcon from '@material-ui/icons/DragHandle';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -47,6 +48,9 @@ const useStyles = makeStyles((theme) => ({
   },
   icons: {
     color: theme.palette.primary.contrastText,
+  },
+  trashIcon: {
+    marginLeft: "auto"
   }
 }));
 
@@ -68,10 +72,13 @@ const SubMenu = (props) => {
                     expandIcon={<ExpandMoreIcon className={classes.icons} />}
                     id={`panel${i}bh-header`}
                 >
-                    <IconButton aria-label="delete">
-                        <DeleteIcon className={classes.icons} />
+                    <IconButton aria-label="drag">
+                        <DragHandleIcon />
                     </IconButton>
                     <Typography className={classes.heading}>{item.title}</Typography>
+                    <IconButton className={classes.trashIcon} aria-label="delete">
+                        <DeleteIcon />
+                    </IconButton>
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                     <Container className={classes.root}>
