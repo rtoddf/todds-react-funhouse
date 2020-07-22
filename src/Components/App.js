@@ -40,7 +40,7 @@ import AmsMobileHomeScreen from "./Ams/Mobile/HomeScreen/";
 import AmsMobileLivestream from "./Ams/Mobile/Livestream/";
 import AmsMobileMenu from "./Ams/Mobile/Menu/";
 import AmsOttGlobalConfig from "./Ams/Ott/GlobalConfig";
-import AmsOttDataSources from "./Ams/Ott/DataSources";
+import AmsOttDataSources from "./Ams/Ott/DataSources/";
 import AmsOttMenu from "./Ams/Ott/Menu";
 
 class App extends React.Component {
