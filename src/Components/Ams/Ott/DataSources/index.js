@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
       width: "100%",
       margin: "10px auto",
-      shadow: theme.shadows[5]
   },
   button: {
     ...theme.button,
@@ -35,9 +34,7 @@ const DataSources = () => {
         </Grid>
         <Grid item xs={12} md={4}>
           <AddNew type="source" />
-
           <Sources sources={ottDataSources} setSelected={setSelected} />
-
           <Grid container spacing={2}>
             <Grid item md={6} className={classes.centered}>
               <Button className={classes.button}>

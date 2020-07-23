@@ -15,15 +15,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sources = (props) => {
-  // eslint-disable-next-line react/prop-types
   const { sources } = props;
-
   const classes = useStyles();
-  // const [expanded, setExpanded] = React.useState(false);
-  
-  // const handleChange = (panel) => (event, isExpanded) => {
-  //   setExpanded(isExpanded ? panel : false);
-  // };
 
   const sourcesItemsStructure = sources.map((item, i) => {
     return(
