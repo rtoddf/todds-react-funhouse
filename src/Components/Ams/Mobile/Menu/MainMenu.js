@@ -8,7 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import DragHandleIcon from '@material-ui/icons/DragHandle';
 
 import SubMenu from './SubMenu';
-import AddNew from "../Common/AddNew";
+import AddNew from "../../Common/AddNew";
 
 import { makeStyles } from '@material-ui/core/styles';
 

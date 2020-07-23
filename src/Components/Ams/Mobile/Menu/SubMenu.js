@@ -2,7 +2,7 @@
 import React from "react";
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, TextField, Typography } from "@material-ui/core";
 import TypesSources from '../Common/TypesSources';
-import AddNew from "../Common/AddNew";
+import AddNew from "../../Common/AddNew";
 
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
