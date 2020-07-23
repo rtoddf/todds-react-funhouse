@@ -32,6 +32,7 @@ import Dialog from "./MaterialUI/Dialog";
 import Progress from "./MaterialUI/Progress";
 
 import Overrides from "./Play/Overrides";
+import DiffDiv from "./Play/DiffDiv";
 
 // AMS Play
 import Ams from "./Ams";
@@ -131,6 +132,7 @@ class App extends React.Component {
             <Route exact path="/components/transitions" render={() => (<Transitions />)} />
 
             <Route exact path="/play/overrides" render={() => (<Overrides />)} />
+            <Route exact path="/play/diffdiv" render={() => (<DiffDiv />)} />
           </Switch>
         </BrowserRouter>
         

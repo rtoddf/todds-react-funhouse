@@ -1,5 +1,5 @@
 import React from "react";
-import TypesSources from '../Common/TypesSources';
+import TypesSources from '../../Common/TypesSources';
 import { Accordion, AccordionDetails, AccordionSummary, Container, Grid, Typography } from "@material-ui/core";
 import TextField from '@material-ui/core/TextField';
 import IconButton from '@material-ui/core/IconButton';

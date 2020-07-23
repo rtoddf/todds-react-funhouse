@@ -45,6 +45,9 @@ const Play = props => {
                         <ListItem button component="a" href="/play/overrides" className={classes.listItem}>
                             <ListItemText primary="Overrides" className={classes.listItemtext} />
                         </ListItem>
+                        <ListItem button component="a" href="/play/diffdiv" className={classes.listItem}>
+                            <ListItemText primary="Diff Div" className={classes.listItemtext} />
+                        </ListItem>
                     </List>
                 </Grid>
             </Grid>
