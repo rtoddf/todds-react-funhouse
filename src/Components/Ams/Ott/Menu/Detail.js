@@ -12,32 +12,32 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Edit = (props) => {
-  const { title, source, type, path, baseUrl } = props.item;
+const Detail = (props) => {
+  const { title, liveStream } = props.item;
   const classes = useStyles();
 
   return (
     <Card>
       <CardHeader
           classes=""
-          title={ `Editing ${title}` }
+          title={ `Editing: ${title}` }
       />
       <CardContent>
         <TextField
           id={`outlined-helperText`}
-          label="Name"
+          label="Title"
           value={title}
           variant="outlined"
           className={classes.textfield}
         />
         <TextField
           id={`outlined-helperText`}
-          label="Source"
-          value={source}
+          label="Live Stream"
+          value={liveStream}
           variant="outlined"
           className={classes.textfield}
         />
-        <TextField
+        {/* <TextField
           id={`outlined-helperText`}
           label="Type"
           value={type}
@@ -57,19 +57,16 @@ const Edit = (props) => {
           value={baseUrl}
           variant="outlined"
           className={classes.textfield}
-        />
+        /> */}
       </CardContent>
     </Card>
   )
 }
 
-Edit.propTypes = {
+Detail.propTypes = {
   item: PropTypes.object,
   title: PropTypes.string,
-  source: PropTypes.string,
-  type: PropTypes.string,
-  path: PropTypes.string,
-  baseUrl: PropTypes.string,
+  liveStream: PropTypes.string,
 };
 
-export default Edit;
+export default Detail;

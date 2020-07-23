@@ -1,7 +1,7 @@
 import React from "react";
 import Sources from "./Sources";
 import AddNew from "../../Common/AddNew";
-import Edit from "./Edit";
+import Detail from "./Detail";
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -47,12 +47,10 @@ const DataSources = () => {
               </Button>
             </Grid>
           </Grid>
-          
-          
         </Grid>
         <Grid item xs={12} md={4}>
           {selected && (
-            <Edit item={selected}/>
+            <Detail item={selected}/>
           )}
         </Grid>
       </Grid>

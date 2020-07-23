@@ -25,7 +25,13 @@ const GlobalConfig = () => {;
   const configItemsStructure = ottGlobalConfig.map((item, i) => {
     return(
       <>
-        Field
+        <TextField
+          id={`outlined-helperText`}
+          label={item.title}
+          value={item.value}
+          variant="outlined"
+          className={classes.textfield}
+        />
       </>
     );
   });
