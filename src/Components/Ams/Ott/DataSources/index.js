@@ -1,6 +1,6 @@
 import React from "react";
 import Sources from "./Sources";
-import AddNew from "../Common/AddNew";
+import AddNew from "../../Common/AddNew";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
