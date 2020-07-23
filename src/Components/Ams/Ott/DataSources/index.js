@@ -1,7 +1,8 @@
 import React from "react";
 import Sources from "./Sources";
 import AddNew from "../../Common/AddNew";
-import { Container, Grid, Typography } from "@material-ui/core";
+import Edit from "./Edit";
+import { Button, Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
 import { ottDataSources } from "../../data/OttDataSources";
@@ -12,10 +13,19 @@ const useStyles = makeStyles((theme) => ({
       margin: "10px auto",
       shadow: theme.shadows[5]
   },
+  button: {
+    ...theme.button,
+    marginBottom: '20px',
+    boxShadow: theme.shadows[1],
+  },
+  centered: {
+    textAlign: "center"
+  }
 }));
 
 const DataSources = () => {
   const classes = useStyles();
+  const [selected, setSelected] = React.useState(false)
 
   return (
     <Container className={classes.root}>
@@ -24,8 +34,29 @@ const DataSources = () => {
             <Typography>OTT Datasources</Typography>
         </Grid>
         <Grid item xs={12} md={4}>
-          {/* <AddNew type="source" /> */}
-          <Sources sources={ottDataSources} />
+          <AddNew type="source" />
+
+          <Sources sources={ottDataSources} setSelected={setSelected} />
+
+          <Grid container spacing={2}>
+            <Grid item md={6} className={classes.centered}>
+              <Button className={classes.button}>
+                  Cancel
+              </Button>
+            </Grid>
+            <Grid item md={6} className={classes.centered}>
+              <Button className={classes.button}>
+                  Save
+              </Button>
+            </Grid>
+          </Grid>
+          
+          
+        </Grid>
+        <Grid item xs={12} md={4}>
+          {selected && (
+            <Edit item={selected}/>
+          )}
         </Grid>
       </Grid>
     </Container>

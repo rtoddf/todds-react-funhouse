@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Grid, List, Typography, ListItem, ListItemSecondaryAction, ListItemText } from "@material-ui/core";
+import { List, ListItem, ListItemText } from "@material-ui/core";
 import IconButton from '@material-ui/core/IconButton';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -11,10 +11,6 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       maxWidth: 360,
       backgroundColor: theme.palette.primary.main
-    },
-    listItem: {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.common.white
     }
 }));
 
@@ -32,7 +28,7 @@ const Sources = (props) => {
   const sourcesItemsStructure = sources.map((item, i) => {
     return(
       <>
-        <ListItem key={i} className={classes.listItem} button>
+        <ListItem key={i} className={classes.listItem} button onClick={() => props.setSelected(item)}>
           <ListItemText primary={item.title} />
           <IconButton aria-label="delete">
             <DeleteIcon />
@@ -44,14 +40,12 @@ const Sources = (props) => {
   });
 
   return (
-    <>
-      <div className={classes.demo}>
-        <List>
-          {sourcesItemsStructure}
-        </List>
-      </div>
-    </>
-  )
+    <div className={classes.demo}>
+      <List>
+        {sourcesItemsStructure}
+      </List>
+    </div>
+  );
 }
 
 export default Sources;

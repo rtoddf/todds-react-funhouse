@@ -8,14 +8,14 @@ const ottDataSources = [
   },
   {
     title: "agreement",
-    source: "medley",
+    source: "boofoo",
     type: "access_atlanta",
     path: "live_video_feed",
     baseUrl: "/hls/accessatl.m3u8"
   },
   {
     title: "air_quality",
-    source: "medley",
+    source: "beebop",
     type: "access_atlanta",
     path: "live_video_feed",
     baseUrl: "/hls/accessatl.m3u8"
@@ -24,7 +24,7 @@ const ottDataSources = [
     title: "amplify",
     source: "medley",
     type: "access_atlanta",
-    path: "live_video_feed",
+    path: "live_video_feed_woohoo",
     baseUrl: "/hls/accessatl.m3u8"
   },
   {
@@ -32,7 +32,7 @@ const ottDataSources = [
     source: "medley",
     type: "access_atlanta",
     path: "live_video_feed",
-    baseUrl: "/hls/accessatl.m3u8"
+    baseUrl: "/hls/accessatlwhocares.m3u8"
   },
   {
     title: "back_to_school",
