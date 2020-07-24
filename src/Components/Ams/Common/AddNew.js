@@ -26,8 +26,6 @@ const useStyles = makeStyles((theme) => ({
 const AddNew = (props) => {
     const { type } = props;
 
-    // const typeText = type === 'menu' ? 'Menu Item' : 'Section Header';
-
     let typeText = "";
 
     switch (type) {

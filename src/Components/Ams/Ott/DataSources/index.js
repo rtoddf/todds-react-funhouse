@@ -4,7 +4,7 @@ import AddNew from "../../Common/AddNew";
 import Detail from "./Detail";
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 import { ottDataSources } from "../../data/OttDataSources";
 
 const useStyles = makeStyles((theme) => ({
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     ...theme.button,
-    marginBottom: '20px',
+    marginBottom: "20px",
     boxShadow: theme.shadows[1],
   },
   centered: {

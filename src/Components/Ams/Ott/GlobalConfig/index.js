@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const GlobalConfig = () => {;
+const GlobalConfig = () => {
   const classes = useStyles();
 
   const configItemsStructure = ottGlobalConfig.map((item, i) => {
