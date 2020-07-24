@@ -38,9 +38,14 @@ const structure = [
           description: "Indexes the content other config files feed from"
         },
         {
+          heading: "Livestreams",
+          url: "/ams/ott/livestreams",
+          description: "Configures the Livetreams in Home Screen Nav Bar"
+        },
+        {
           heading: "Menu",
           url: "/ams/ott/menu",
-          description: "Configures the Home Screen Nav Bar"
+          description: "Configures the Menu Items in Home Screen Nav Bar"
         }
       ]
   }

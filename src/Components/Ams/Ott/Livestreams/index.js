@@ -5,7 +5,7 @@ import AddNew from "../../Common/AddNew";
 import { Button, Container, Grid, Typography } from "@material-ui/core";
 
 import { makeStyles } from '@material-ui/core/styles';
-import { ottMenu } from "../../data/OttMenu";
+import { livestreams } from "../../data/OttMenu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Menu = () => {
+const LiveStreams = () => {
   const classes = useStyles();
   const [selected, setSelected] = React.useState(false)
 
@@ -37,21 +37,18 @@ const Menu = () => {
       </Container>
 
       <Container className={classes.root}>
-        {/* menu items */}
+        {/* Livestreams */}
         <Grid container spacing={2}>
           <Grid item md={4}>
             <AddNew type="menu" />
-            <Items items={ottMenu} setSelected={setSelected} />
+            <Items items={livestreams} setSelected={setSelected} />
           </Grid>
           <Grid item xs={12} md={4}>
             {selected && (
               <Detail item={selected} />
             )}
           </Grid>
-
         </Grid>
-
-
       </Container>
       <Container className={classes.root}>
         {/* save/cancel buttons */}
@@ -76,4 +73,4 @@ const Menu = () => {
   )
 }
 
-export default Menu;
+export default LiveStreams;

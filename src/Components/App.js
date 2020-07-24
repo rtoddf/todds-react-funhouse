@@ -43,6 +43,7 @@ import AmsMobileMenu from "./Ams/Mobile/Menu/";
 import AmsOttGlobalConfig from "./Ams/Ott/GlobalConfig/";
 import AmsOttDataSources from "./Ams/Ott/DataSources/";
 import AmsOttMenu from "./Ams/Ott/Menu/";
+import AmsOttLivestreams from "./Ams/Ott/Livestreams";
 
 class App extends React.Component {
   state = {
@@ -112,6 +113,7 @@ class App extends React.Component {
             <Route exact path="/ams/ott/globalconfig" render={() => (<AmsOttGlobalConfig />)} />
             <Route exact path="/ams/ott/datasources" render={() => (<AmsOttDataSources />)} />
             <Route exact path="/ams/ott/menu" render={() => (<AmsOttMenu />)} />
+            <Route exact path="/ams/ott/livestreams" render={() => (<AmsOttLivestreams />)} />
 
             <Route exact path="/links" render={() => (<Links />)} />
 
