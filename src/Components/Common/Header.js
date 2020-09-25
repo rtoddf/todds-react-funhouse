@@ -94,6 +94,7 @@ const Header = props => {
                             <Tab className={classes.tab} label="Components" component={Link} to="/components" />
                             <Tab className={classes.tab} label="Play" component={Link} to="/play" />
                             <Tab className={classes.tab} label="AMS" component={Link} to="/ams" />
+                            <Tab className={classes.tab} label="Leaflet" component={Link} to="/leaflet" />
                         </Tabs>
                         <Button variant="contained" className={classes.button}>
                             News
