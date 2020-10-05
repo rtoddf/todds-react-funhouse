@@ -45,6 +45,11 @@ const Leaflet = props => {
                         <ListItem button component="a" href="/leaflet/simple01" className={classes.listItem}>
                             <ListItemText primary="Simple 01" className={classes.listItemtext} />
                         </ListItem>
+                        <ListItem button component="a" href="/leaflet/atlanta-traffic" className={classes.listItem}>
+                            <ListItemText primary="Atlanta Traffic" className={classes.listItemtext} />
+                        </ListItem>
+
+                        
                         {/* <ListItem button component="a" href="/play/diffdiv" className={classes.listItem}>
                             <ListItemText primary="Diff Div" className={classes.listItemtext} />
                         </ListItem> */}
