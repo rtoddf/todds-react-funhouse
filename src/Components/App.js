@@ -8,6 +8,7 @@ import Header from "./Common/Header";
 import Home from "./Home";
 import Components from "./MaterialUI";
 import Play from "./Play";
+import Leaflet from "./Leaflet";
 
 import Links from "./Home/Links";
 
@@ -44,6 +45,10 @@ import AmsOttGlobalConfig from "./Ams/Ott/GlobalConfig/";
 import AmsOttDataSources from "./Ams/Ott/DataSources/";
 import AmsOttMenu from "./Ams/Ott/Menu/";
 import AmsOttLivestreams from "./Ams/Ott/Livestreams";
+
+// Leaflet
+import Simple01 from "./Leaflet/Simple01";
+import AtlantaTraffic from "./Leaflet/AtlantaTraffic";
 
 class App extends React.Component {
   state = {
@@ -102,8 +107,6 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path="/" render={() => (<Home />)} />
-            <Route exact path="/components" render={() => (<Components />)} />
-            <Route exact path="/play" render={() => (<Play />)} />
 
             <Route exact path="/ams" render={() => (<Ams />)} />
             <Route exact path="/ams/mobile/datasources" render={() => (<AmsMobileDataSources />)} />
@@ -117,6 +120,7 @@ class App extends React.Component {
 
             <Route exact path="/links" render={() => (<Links />)} />
 
+            <Route exact path="/components" render={() => (<Components />)} />
             <Route exact path="/components/avatar" render={() => (<Avatar />)} />
             <Route exact path="/components/badges" render={() => (<Badges />)} />
             <Route exact path="/components/buttons" render={() => (<Buttons />)} />
@@ -133,8 +137,13 @@ class App extends React.Component {
             <Route exact path="/components/transfer-list" render={() => (<TransferList />)} />
             <Route exact path="/components/transitions" render={() => (<Transitions />)} />
 
+            <Route exact path="/play" render={() => (<Play />)} />
             <Route exact path="/play/overrides" render={() => (<Overrides />)} />
             <Route exact path="/play/diffdiv" render={() => (<DiffDiv />)} />
+
+            <Route exact path="/leaflet" render={() => (<Leaflet />)} />
+            <Route exact path="/leaflet/simple01" render={() => (<Simple01 />)} />
+            <Route exact path="/leaflet/atlanta-traffic" render={() => (<AtlantaTraffic />)} />
           </Switch>
         </BrowserRouter>
         
