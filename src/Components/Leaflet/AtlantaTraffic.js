@@ -5,13 +5,13 @@ import { Container, Grid } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 import { PageHeading } from "../Common";
 
-import * as trafficData from "./data/get_list_by_status.json";
+import * as incidentsData from "./data/incidents.json";
 import "./css/base.css";
 
-const skater = new Icon({
-    iconUrl: "/skateboarding.svg",
-    iconSize: [25, 25]
-})
+// const skater = new Icon({
+//     iconUrl: "/skateboarding.svg",
+//     iconSize: [25, 25]
+// })
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -43,8 +43,7 @@ const AtlantaTraffic = () => {
     const classes = useStyles();
     const [activeIncident, setActiveIncident] = useState(null);
 
-    const incidents = trafficData.incidents;
-    console.log('incidents: ', incidents)
+    const incidents = incidentsData.incidents;
 
     return (
         <Container className={classes.root}>
@@ -55,8 +54,8 @@ const AtlantaTraffic = () => {
                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' />
                     
                         {incidents.map(incident => (
-                            <Marker key={incident.id} position={[
-                                incident.incident_location.lat,incident.incident_location.lng
+                            <Marker key={incident.incident_id} position={[
+                                incident.coords.lat, incident.coords.lng
                               ]}
                               onClick={() => {
                                 setActiveIncident(incident);
