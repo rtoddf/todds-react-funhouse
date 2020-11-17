@@ -49,6 +49,7 @@ import AmsOttLivestreams from "./Ams/Ott/Livestreams";
 // Leaflet
 import Simple01 from "./Leaflet/Simple01";
 import AtlantaTraffic from "./Leaflet/AtlantaTraffic";
+import UsChoropleth01 from "./Leaflet/UsChoropleth01";
 
 class App extends React.Component {
   state = {
@@ -144,6 +145,7 @@ class App extends React.Component {
             <Route exact path="/leaflet" render={() => (<Leaflet />)} />
             <Route exact path="/leaflet/simple01" render={() => (<Simple01 />)} />
             <Route exact path="/leaflet/atlanta-traffic" render={() => (<AtlantaTraffic />)} />
+            <Route exact path="/leaflet/us-choropleth01" render={() => (<UsChoropleth01 />)} />
           </Switch>
         </BrowserRouter>
         
