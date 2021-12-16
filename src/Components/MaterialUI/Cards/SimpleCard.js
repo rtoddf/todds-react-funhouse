@@ -61,28 +61,28 @@ const SimpleCard = props => {
     };
 
     return (
-    <Card className={classes.root}>
-        <CardContent>
-            <Typography className={classes.title} gutterBottom={true}>
-                {item.title}
-            </Typography>
-            <Typography className={classes.word} variant="h5">
-                {replaceBullet(item.word)}
-            </Typography>
-            <Typography variant="subtitle2" className={classes.partOfSpeech} gutterBottom={true}>
-                {item.type}
-            </Typography>
-            <Typography className={classes.definition} variant="body1">
-                {item.meaning}
-            </Typography>
-            <Typography className={classes.usage} variant="body2">
-                {item.usage}
-            </Typography>
-        </CardContent>
-        {/* <CardActions>
-            <Button size="small">Learn More</Button>
-        </CardActions> */}
-    </Card>
+      <Card className={classes.root}>
+          <CardContent>
+              <Typography className={classes.title} gutterBottom={true}>
+                  {item.title}
+              </Typography>
+              <Typography className={classes.word} variant="h5">
+                  {replaceBullet(item.word)}
+              </Typography>
+              <Typography variant="subtitle2" className={classes.partOfSpeech} gutterBottom={true}>
+                  {item.type}
+              </Typography>
+              <Typography className={classes.definition} variant="body1">
+                  {item.meaning}
+              </Typography>
+              <Typography className={classes.usage} variant="body2">
+                  {item.usage}
+              </Typography>
+          </CardContent>
+          {/* <CardActions>
+              <Button size="small">Learn More</Button>
+          </CardActions> */}
+      </Card>
     )
 }
 
